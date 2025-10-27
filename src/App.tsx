@@ -1,5 +1,12 @@
 import { Calendar } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import img1 from './images/1.jpg';
+import img2 from './images/2.jpg';
+import img3 from './images/3.png';
+import img4 from './images/4.png';
+import img5 from './images/5.jpg';
+import img6 from './images/6.jpg';
+import img7 from './images/7.png';
 
 const workshops = [
   {
@@ -15,7 +22,7 @@ const workshops = [
     date: 'Nov. 12, 2025',
     title: 'Workshop: The Science of Gratitude',
     type: 'Workshop',
-    image: 'https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: img1
   },
   {
     id: 'joyful-moments',
@@ -54,6 +61,8 @@ const workshops = [
     image: 'https://images.pexels.com/photos/3771836/pexels-photo-3771836.jpeg?auto=compress&cs=tinysrgb&w=800'
   }
 ];
+
+const localImages = [img1, img2, img3, img4, img5, img6, img7];
 
 function App() {
   const [activeSection, setActiveSection] = useState(0);
@@ -136,7 +145,7 @@ function App() {
                       <div className="absolute -inset-4 bg-[#ca3433] opacity-20 rounded-full blur-2xl group-hover:opacity-30 transition-opacity"></div>
                       <div className="relative w-full aspect-square rounded-full overflow-hidden border-8 border-[#ca3433] shadow-2xl">
                         <img
-                          src={workshop.image}
+                          src={localImages[index] ?? workshop.image}
                           alt={workshop.title}
                           className="w-full h-full object-cover"
                         />
@@ -234,7 +243,7 @@ function App() {
                       <div className="absolute -inset-4 bg-[#ca3433] opacity-20 rounded-full blur-2xl group-hover:opacity-30 transition-opacity"></div>
                       <div className="relative w-full aspect-square rounded-full overflow-hidden border-8 border-[#ca3433] shadow-2xl">
                         <img
-                          src={workshop.image}
+                          src={localImages[index] ?? workshop.image}
                           alt={workshop.title}
                           className="w-full h-full object-cover"
                         />
