@@ -196,9 +196,9 @@ function App() {
                       <div className="bg-[#ca3433] text-white px-6 py-3 inline-block mb-4">
                         <p className="text-lg">For adults and young adults</p>
                       </div>
-                      <button className="block w-full lg:w-auto bg-[#ca3433] text-white px-12 py-6 text-3xl font-bold hover:bg-[#0e1f3e] transition-colors duration-300">
+                      <a href="https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01" target="_blank" rel="noopener noreferrer" className="block w-fit bg-[#ca3433] text-white px-8 py-4 text-xl font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
                         REGISTER NOW
-                      </button>
+                      </a>
                     </div>
 
                     <div className="pt-6 space-y-2">
@@ -235,9 +235,9 @@ function App() {
                       <div className="bg-[#ca3433] text-white px-6 py-3 inline-block mb-4">
                         <p className="text-lg">For adults and young adults</p>
                       </div>
-                      <button className="block w-full lg:w-auto bg-[#ca3433] text-white px-12 py-6 text-3xl font-bold hover:bg-[#0e1f3e] transition-colors duration-300">
+                      <a href="https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01" target="_blank" rel="noopener noreferrer" className="block w-fit bg-[#ca3433] text-white px-8 py-4 text-xl font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
                         REGISTER NOW
-                      </button>
+                      </a>
                     </div>
 
                     <div className="pt-6 space-y-2">
