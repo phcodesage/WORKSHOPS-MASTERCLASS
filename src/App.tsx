@@ -1,6 +1,7 @@
 import { Calendar } from 'lucide-react';
+import Lenis from 'lenis';
 import { useState, useEffect } from 'react';
-import img1 from './images/1.jpg';
+
 import img2 from './images/2.jpg';
 import img3 from './images/3.png';
 import img4 from './images/4.png';
@@ -8,43 +9,16 @@ import img5 from './images/5.jpg';
 
 import img7 from './images/7.png';
 import futureSelfImg from './images/future-self.png';
+import goalsWithSoulsImg from './images/goals-wtih-soulds.png';
+import yearInReviewImg from './images/year-in-review.png';
 
 const workshops = [
   {
-    id: 'masterclass',
-    date: 'Nov. 9, 2025',
-    title: 'Masterclass: From Surviving to Thriving',
-    subtitle: 'Habits, Mindsets, and Practices for a Better Life',
-    type: 'Masterclass',
-    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800'
-  },
-  {
-    id: 'gratitude',
-    date: 'Nov. 12, 2025',
-    title: 'Workshop: The Science of Gratitude',
-    type: 'Workshop',
-    image: img1
-  },
-  {
-    id: 'joyful-moments',
-    date: 'Nov 23, 2025',
-    title: 'Workshop: The Power of Joyful Moments',
-    type: 'Workshop',
-    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800'
-  },
-  {
-    id: 'core-values',
-    date: 'Nov. 25, 2025',
-    title: 'Workshop: Discover Core Values',
-    type: 'Workshop',
-    image: 'https://images.pexels.com/photos/3771115/pexels-photo-3771115.jpeg?auto=compress&cs=tinysrgb&w=800'
-  },
-  {
     id: 'goals',
-    date: 'Dec 2, 2025',
+    date: 'Dec 1, 2025 • 6:00 PM',
     title: 'Workshop: Goals with Souls',
     type: 'Workshop',
-    image: 'https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: goalsWithSoulsImg
   },
   {
     id: 'future-self',
@@ -61,10 +35,18 @@ const workshops = [
     subtitle: 'Stronger',
     type: 'Workshop',
     image: 'https://images.pexels.com/photos/3771836/pexels-photo-3771836.jpeg?auto=compress&cs=tinysrgb&w=800'
+  },
+  {
+    id: 'year-in-review',
+    date: 'Dec 30, 2025 • 6:00 PM',
+    title: 'Workshop: A Year in Review',
+    subtitle: 'Celebrate, Release and Renew',
+    type: 'Workshop',
+    image: yearInReviewImg
   }
 ];
 
-const localImages = [img1, img2, img3, img4, img5, futureSelfImg, img7];
+const localImages = [goalsWithSoulsImg, img2, img3, img4, img5, futureSelfImg, img7, yearInReviewImg];
 
 function App() {
   const [activeSection, setActiveSection] = useState(0);
@@ -84,6 +66,21 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   const scrollToSection = (index: number) => {
