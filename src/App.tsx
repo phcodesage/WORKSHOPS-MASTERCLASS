@@ -5,8 +5,9 @@ import img2 from './images/2.jpg';
 import img3 from './images/3.png';
 import img4 from './images/4.png';
 import img5 from './images/5.jpg';
-import img6 from './images/6.jpg';
+
 import img7 from './images/7.png';
+import futureSelfImg from './images/future-self.png';
 
 const workshops = [
   {
@@ -47,10 +48,11 @@ const workshops = [
   },
   {
     id: 'future-self',
-    date: 'Dec 17, 2025',
-    title: 'Workshop: Letter To Your Future Self',
+    date: 'Dec 23, 2025 • 6:00PM',
+    title: 'Workshop: Letter for Your Future Self',
+    subtitle: 'Reflect, write, and reconnect with who you are today',
     type: 'Workshop',
-    image: 'https://images.pexels.com/photos/3771579/pexels-photo-3771579.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: futureSelfImg
   },
   {
     id: 'reflect-reset',
@@ -62,7 +64,7 @@ const workshops = [
   }
 ];
 
-const localImages = [img1, img2, img3, img4, img5, img6, img7];
+const localImages = [img1, img2, img3, img4, img5, futureSelfImg, img7];
 
 function App() {
   const [activeSection, setActiveSection] = useState(0);
@@ -116,9 +118,8 @@ function App() {
                 <button
                   key={workshop.id}
                   onClick={() => scrollToSection(index)}
-                  className={`text-sm hover:text-[#ca3433] transition-colors ${
-                    activeSection === index ? 'text-[#ca3433] font-semibold' : ''
-                  }`}
+                  className={`text-sm hover:text-[#ca3433] transition-colors ${activeSection === index ? 'text-[#ca3433] font-semibold' : ''
+                    }`}
                 >
                   {workshop.date.split(':')[0]}
                 </button>
@@ -144,9 +145,8 @@ function App() {
           </div>
 
           <div className="container mx-auto px-6 z-10">
-            <div className={`grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto ${
-              index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-            }`}>
+            <div className={`grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+              }`}>
               {index % 2 === 0 ? (
                 <>
                   <div className="relative">
@@ -279,9 +279,8 @@ function App() {
                 <button
                   key={idx}
                   onClick={() => scrollToSection(idx)}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    idx === index ? 'bg-[#ca3433] w-8' : 'bg-[#0e1f3e] opacity-30'
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all ${idx === index ? 'bg-[#ca3433] w-8' : 'bg-[#0e1f3e] opacity-30'
+                    }`}
                 />
               ))}
             </div>
