@@ -2,14 +2,11 @@ import { Calendar } from 'lucide-react';
 import Lenis from 'lenis';
 import { useState, useEffect } from 'react';
 
-
-import img3 from './images/3.png';
-
-import img5 from './images/5.jpg';
-
-import img7 from './images/7.png';
+import artOfSayingNoImg from './images/art-of-saying-no.png';
 import futureSelfImg from './images/future-self.png';
-import goalsWithSoulsImg from './images/goals-wtih-soulds.png';
+import goalsWithSoulsNewImg from './images/goals-with-souls-new.png';
+import redefiningSuccessImg from './images/redefining-success.png';
+import reflectResetImg from './images/reflect-reset.png';
 import yearInReviewImg from './images/year-in-review.png';
 
 const workshops = [
@@ -18,7 +15,23 @@ const workshops = [
     date: 'Dec 1, 2025 • 6:00 PM',
     title: 'Workshop: Goals with Souls',
     type: 'Workshop',
-    image: goalsWithSoulsImg
+    image: goalsWithSoulsNewImg
+  },
+  {
+    id: 'art-of-saying-no',
+    date: 'Dec 08, 2025 • 6:00 PM',
+    title: 'Workshop: The art of saying "no"',
+    subtitle: 'Boundaries for Better Life',
+    type: 'Workshop',
+    image: artOfSayingNoImg
+  },
+  {
+    id: 'redefining-success',
+    date: 'Dec 17, 2025 • 6:00 PM',
+    title: 'Workshop: Redefining Success',
+    subtitle: 'What Truly Matters to You',
+    type: 'Workshop',
+    image: redefiningSuccessImg
   },
   {
     id: 'future-self',
@@ -34,7 +47,7 @@ const workshops = [
     title: 'Workshop: Reflect, Reset, End the Year and Start a New One',
     subtitle: 'Stronger',
     type: 'Workshop',
-    image: 'https://images.pexels.com/photos/3771836/pexels-photo-3771836.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: reflectResetImg
   },
   {
     id: 'year-in-review',
@@ -46,7 +59,7 @@ const workshops = [
   }
 ];
 
-const localImages = [goalsWithSoulsImg, futureSelfImg, img3, yearInReviewImg, img5, futureSelfImg, img7, yearInReviewImg];
+const localImages = [goalsWithSoulsNewImg, artOfSayingNoImg, redefiningSuccessImg, futureSelfImg, reflectResetImg, yearInReviewImg];
 
 function App() {
   const [activeSection, setActiveSection] = useState(0);
