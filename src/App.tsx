@@ -2,9 +2,9 @@ import { Calendar } from 'lucide-react';
 import Lenis from 'lenis';
 import { useState, useEffect } from 'react';
 
-import img2 from './images/2.jpg';
+
 import img3 from './images/3.png';
-import img4 from './images/4.png';
+
 import img5 from './images/5.jpg';
 
 import img7 from './images/7.png';
@@ -46,7 +46,7 @@ const workshops = [
   }
 ];
 
-const localImages = [goalsWithSoulsImg, img2, img3, img4, img5, futureSelfImg, img7, yearInReviewImg];
+const localImages = [goalsWithSoulsImg, futureSelfImg, img3, yearInReviewImg, img5, futureSelfImg, img7, yearInReviewImg];
 
 function App() {
   const [activeSection, setActiveSection] = useState(0);
