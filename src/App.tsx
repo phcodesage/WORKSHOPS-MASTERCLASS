@@ -8,6 +8,11 @@ import goalsWithSoulsNewImg from './images/goals-with-souls-new.png';
 import redefiningSuccessImg from './images/redefining-success.png';
 import reflectResetImg from './images/reflect-reset.png';
 import yearInReviewImg from './images/year-in-review.png';
+import rebootEnergyImg from './images/Reboot Your Energy.png';
+import trainBrainImg from './images/Train Your Brain.png';
+import mindfulMovementImg from './images/Mindful Movement.png';
+import eatSmartImg from './images/Eat Smart, Think Sharp.png';
+import stressResetImg from './images/Stress Reset.png';
 
 const workshops = [
   {
@@ -56,6 +61,46 @@ const workshops = [
     subtitle: 'Celebrate, Release and Renew',
     type: 'Workshop',
     image: yearInReviewImg
+  },
+  {
+    id: 'reboot-energy',
+    date: 'Jan 5, 2026 • 6:00 PM',
+    title: 'Workshop: Reboot Your Energy',
+    subtitle: 'The Science of Vitality',
+    type: 'Workshop',
+    image: rebootEnergyImg
+  },
+  {
+    id: 'train-brain',
+    date: 'Jan 7, 2026 • 6:00 PM',
+    title: 'Workshop: Train Your Brain',
+    subtitle: 'Building Mental Fitness',
+    type: 'Workshop',
+    image: trainBrainImg
+  },
+  {
+    id: 'mindful-movement',
+    date: 'Jan 14, 2026 • 6:00 PM',
+    title: 'Workshop: Mindful Movement',
+    subtitle: 'The Power of Motion for Emotion',
+    type: 'Workshop',
+    image: mindfulMovementImg
+  },
+  {
+    id: 'eat-smart',
+    date: 'Jan 19, 2026 • 6:00 PM',
+    title: 'Workshop: Eat Smart, Think Sharp',
+    subtitle: 'Nutrition For Brain and Body',
+    type: 'Workshop',
+    image: eatSmartImg
+  },
+  {
+    id: 'stress-reset',
+    date: 'Jan 28, 2026 • 6:00 PM',
+    title: 'Workshop: Stress Reset',
+    subtitle: 'The Mind-Body Connection',
+    type: 'Workshop',
+    image: stressResetImg
   }
 ];
 
@@ -143,7 +188,7 @@ function App() {
         <section
           key={workshop.id}
           id={workshop.id}
-          className="workshop-section h-screen flex items-center justify-center relative overflow-hidden"
+          className="workshop-section min-h-screen lg:h-screen flex items-center justify-center relative overflow-hidden py-20 lg:py-0"
           style={{
             backgroundColor: index % 2 === 0 ? '#f7e0e0' : 'white'
           }}
@@ -155,14 +200,14 @@ function App() {
           </div>
 
           <div className="container mx-auto px-6 z-10">
-            <div className={`grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+            <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
               }`}>
               {index % 2 === 0 ? (
                 <>
                   <div className="relative">
                     <div className="relative group">
                       <div className="absolute -inset-4 bg-[#ca3433] opacity-20 rounded-full blur-2xl group-hover:opacity-30 transition-opacity"></div>
-                      <div className="relative w-full aspect-square rounded-full overflow-hidden border-8 border-[#ca3433] shadow-2xl">
+                      <div className="relative w-full aspect-square lg:rounded-full rounded-2xl overflow-hidden border-4 lg:border-8 border-[#ca3433] shadow-2xl">
                         <img
                           src={localImages[index] ?? workshop.image}
                           alt={workshop.title}
@@ -170,10 +215,10 @@ function App() {
                         />
                       </div>
                     </div>
-                    <div className="absolute -left-8 top-0 w-1 h-full bg-[#ca3433]"></div>
-                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#ca3433] text-white px-6 py-3">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-white flex items-center justify-center">
+                    <div className="hidden lg:block absolute -left-8 top-0 w-1 h-full bg-[#ca3433]"></div>
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#ca3433] text-white px-6 py-3 w-max max-w-[90%] text-center rounded-lg lg:rounded-none">
+                      <div className="flex items-center space-x-3 justify-center">
+                        <div className="hidden lg:flex w-12 h-12 bg-white items-center justify-center">
                           <div className="w-8 h-1 bg-[#ca3433]"></div>
                         </div>
                         <span className="font-bold text-lg">{workshop.type}</span>
@@ -181,19 +226,19 @@ function App() {
                     </div>
                   </div>
 
-                  <div className="space-y-6">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-[#0e1f3e] leading-tight">
+                  <div className="space-y-6 text-center lg:text-left">
+                    <h2 className="text-3xl lg:text-5xl font-bold text-[#0e1f3e] leading-tight">
                       {workshop.title}
                     </h2>
                     {workshop.subtitle && (
-                      <p className="text-2xl text-[#ca3433] font-semibold">
+                      <p className="text-xl lg:text-2xl text-[#ca3433] font-semibold">
                         {workshop.subtitle}
                       </p>
                     )}
 
-                    <div className="flex items-center space-x-3 text-[#ca3433]">
-                      <Calendar className="w-8 h-8" />
-                      <span className="text-3xl font-bold">{workshop.date}</span>
+                    <div className="flex items-center justify-center lg:justify-start space-x-3 text-[#ca3433]">
+                      <Calendar className="w-6 h-6 lg:w-8 lg:h-8" />
+                      <span className="text-2xl lg:text-3xl font-bold">{workshop.date}</span>
                     </div>
 
                     <div className="pt-6">
@@ -202,8 +247,8 @@ function App() {
                       <p className="text-lg text-[#0e1f3e] italic">1360 Willis Ave, Albertson, NY</p>
                     </div>
 
-                    <div className="pt-4">
-                      <div className="bg-[#ca3433] text-white px-6 py-3 inline-block mb-4">
+                    <div className="pt-4 flex flex-col items-center lg:items-start">
+                      <div className="bg-[#ca3433] text-white px-6 py-3 inline-block mb-4 rounded-lg lg:rounded-none">
                         <p className="text-lg">For adults and young adults</p>
                       </div>
                       <a href="https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01" target="_blank" rel="noopener noreferrer" className="block w-fit bg-[#ca3433] text-white px-8 py-4 text-xl font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
@@ -220,19 +265,19 @@ function App() {
                 </>
               ) : (
                 <>
-                  <div className="space-y-6">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-[#0e1f3e] leading-tight">
+                  <div className="space-y-6 text-center lg:text-left order-2 lg:order-1">
+                    <h2 className="text-3xl lg:text-5xl font-bold text-[#0e1f3e] leading-tight">
                       {workshop.title}
                     </h2>
                     {workshop.subtitle && (
-                      <p className="text-2xl text-[#ca3433] font-semibold">
+                      <p className="text-xl lg:text-2xl text-[#ca3433] font-semibold">
                         {workshop.subtitle}
                       </p>
                     )}
 
-                    <div className="flex items-center space-x-3 text-[#ca3433]">
-                      <Calendar className="w-8 h-8" />
-                      <span className="text-3xl font-bold">{workshop.date}</span>
+                    <div className="flex items-center justify-center lg:justify-start space-x-3 text-[#ca3433]">
+                      <Calendar className="w-6 h-6 lg:w-8 lg:h-8" />
+                      <span className="text-2xl lg:text-3xl font-bold">{workshop.date}</span>
                     </div>
 
                     <div className="pt-6">
@@ -241,8 +286,8 @@ function App() {
                       <p className="text-lg text-[#0e1f3e] italic">1360 Willis Ave, Albertson, NY</p>
                     </div>
 
-                    <div className="pt-4">
-                      <div className="bg-[#ca3433] text-white px-6 py-3 inline-block mb-4">
+                    <div className="pt-4 flex flex-col items-center lg:items-start">
+                      <div className="bg-[#ca3433] text-white px-6 py-3 inline-block mb-4 rounded-lg lg:rounded-none">
                         <p className="text-lg">For adults and young adults</p>
                       </div>
                       <a href="https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01" target="_blank" rel="noopener noreferrer" className="block w-fit bg-[#ca3433] text-white px-8 py-4 text-xl font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
@@ -257,10 +302,10 @@ function App() {
                     </div>
                   </div>
 
-                  <div className="relative">
+                  <div className="relative order-1 lg:order-2">
                     <div className="relative group">
                       <div className="absolute -inset-4 bg-[#ca3433] opacity-20 rounded-full blur-2xl group-hover:opacity-30 transition-opacity"></div>
-                      <div className="relative w-full aspect-square rounded-full overflow-hidden border-8 border-[#ca3433] shadow-2xl">
+                      <div className="relative w-full aspect-square lg:rounded-full rounded-2xl overflow-hidden border-4 lg:border-8 border-[#ca3433] shadow-2xl">
                         <img
                           src={localImages[index] ?? workshop.image}
                           alt={workshop.title}
@@ -268,10 +313,10 @@ function App() {
                         />
                       </div>
                     </div>
-                    <div className="absolute -right-8 top-0 w-1 h-full bg-[#ca3433]"></div>
-                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#ca3433] text-white px-6 py-3">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-white flex items-center justify-center">
+                    <div className="hidden lg:block absolute -right-8 top-0 w-1 h-full bg-[#ca3433]"></div>
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#ca3433] text-white px-6 py-3 w-max max-w-[90%] text-center rounded-lg lg:rounded-none">
+                      <div className="flex items-center space-x-3 justify-center">
+                        <div className="hidden lg:flex w-12 h-12 bg-white items-center justify-center">
                           <div className="w-8 h-1 bg-[#ca3433]"></div>
                         </div>
                         <span className="font-bold text-lg">{workshop.type}</span>
@@ -283,7 +328,7 @@ function App() {
             </div>
           </div>
 
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block">
             <div className="flex space-x-2">
               {workshops.map((_, idx) => (
                 <button
