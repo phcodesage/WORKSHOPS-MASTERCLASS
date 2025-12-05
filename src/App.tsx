@@ -13,6 +13,7 @@ import trainBrainImg from './images/Train Your Brain.png';
 import mindfulMovementImg from './images/Mindful Movement.png';
 import eatSmartImg from './images/Eat Smart, Think Sharp.png';
 import stressResetImg from './images/Stress Reset.png';
+import mindBodyConnectionImg from './images/Mind-Body Connection to Achievements Workshop.png';
 
 const workshops = [
   {
@@ -77,6 +78,16 @@ const workshops = [
     subtitle: 'Building Mental Fitness',
     type: 'Workshop',
     image: trainBrainImg
+  },
+  {
+    id: 'mind-body-connection',
+    date: 'Jan 11, 2026 • 10:00 AM - 3:00 PM',
+    title: 'Limitless Masterclass: From Goals to Greatness',
+    subtitle: 'The Mind-Body Connection to Achievements',
+    type: 'Masterclass',
+    image: mindBodyConnectionImg,
+    price: '$297 (includes breakfast and lunch)',
+    registrationUrl: 'https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01'
   },
   {
     id: 'mindful-movement',
@@ -184,164 +195,183 @@ function App() {
         </div>
       </nav>
 
-      {workshops.map((workshop, index) => (
-        <section
-          key={workshop.id}
-          id={workshop.id}
-          className="workshop-section min-h-screen lg:h-screen flex items-center justify-center relative overflow-hidden py-20 lg:py-0"
-          style={{
-            backgroundColor: index % 2 === 0 ? '#f7e0e0' : 'white'
-          }}
-        >
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-[#ca3433]"></div>
-            <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-[#0e1f3e]"></div>
-            <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-[#ca3433]"></div>
-          </div>
-
-          <div className="container mx-auto px-6 z-10">
-            <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}>
-              {index % 2 === 0 ? (
+      {workshops.map((workshop, index) => {
+        const isMasterclass = workshop.type === 'Masterclass';
+        return (
+          <section
+            key={workshop.id}
+            id={workshop.id}
+            className={`workshop-section min-h-screen ${isMasterclass ? 'lg:min-h-screen' : 'lg:h-screen'} flex items-center justify-center relative overflow-hidden ${isMasterclass ? 'py-24 lg:py-16' : 'py-20 lg:py-0'}`}
+            style={{
+              backgroundColor: index % 2 === 0 ? '#f7e0e0' : 'white'
+            }}
+          >
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-[#ca3433]"></div>
+              <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-[#0e1f3e]"></div>
+              <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-[#ca3433]"></div>
+              {isMasterclass && (
                 <>
-                  <div className="relative">
-                    <div className="relative group">
-                      <div className="absolute -inset-4 bg-[#ca3433] opacity-20 rounded-full blur-2xl group-hover:opacity-30 transition-opacity"></div>
-                      <div className="relative w-full aspect-square lg:rounded-full rounded-2xl overflow-hidden border-4 lg:border-8 border-[#ca3433] shadow-2xl">
-                        <img
-                          src={localImages[index] ?? workshop.image}
-                          alt={workshop.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                    <div className="hidden lg:block absolute -left-8 top-0 w-1 h-full bg-[#ca3433]"></div>
-                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#ca3433] text-white px-6 py-3 w-max max-w-[90%] text-center rounded-lg lg:rounded-none">
-                      <div className="flex items-center space-x-3 justify-center">
-                        <div className="hidden lg:flex w-12 h-12 bg-white items-center justify-center">
-                          <div className="w-8 h-1 bg-[#ca3433]"></div>
-                        </div>
-                        <span className="font-bold text-lg">{workshop.type}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-6 text-center lg:text-left">
-                    <h2 className="text-3xl lg:text-5xl font-bold text-[#0e1f3e] leading-tight">
-                      {workshop.title}
-                    </h2>
-                    {workshop.subtitle && (
-                      <p className="text-xl lg:text-2xl text-[#ca3433] font-semibold">
-                        {workshop.subtitle}
-                      </p>
-                    )}
-
-                    <div className="flex items-center justify-center lg:justify-start space-x-3 text-[#ca3433]">
-                      <Calendar className="w-6 h-6 lg:w-8 lg:h-8" />
-                      <span className="text-2xl lg:text-3xl font-bold">{workshop.date}</span>
-                    </div>
-
-                    <div className="pt-6">
-                      <p className="text-lg text-[#0e1f3e] mb-2">at:</p>
-                      <p className="text-xl font-bold text-[#ca3433]">Exceed Learning Center</p>
-                      <p className="text-lg text-[#0e1f3e] italic">1360 Willis Ave, Albertson, NY</p>
-                    </div>
-
-                    <div className="pt-4 flex flex-col items-center lg:items-start">
-                      <div className="bg-[#ca3433] text-white px-6 py-3 inline-block mb-4 rounded-lg lg:rounded-none">
-                        <p className="text-lg">For adults and young adults</p>
-                      </div>
-                      <a href="https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01" target="_blank" rel="noopener noreferrer" className="block w-fit bg-[#ca3433] text-white px-8 py-4 text-xl font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                        REGISTER NOW
-                      </a>
-                    </div>
-
-                    <div className="pt-6 space-y-2">
-                      <p className="text-lg text-[#0e1f3e] font-semibold">Secure your spot today!</p>
-                      <p className="text-lg text-[#0e1f3e]">Adultclasses@exceedlearningcenterny.com</p>
-                      <p className="text-lg text-[#0e1f3e]">www.exceedlearningcenterny.com</p>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="space-y-6 text-center lg:text-left order-2 lg:order-1">
-                    <h2 className="text-3xl lg:text-5xl font-bold text-[#0e1f3e] leading-tight">
-                      {workshop.title}
-                    </h2>
-                    {workshop.subtitle && (
-                      <p className="text-xl lg:text-2xl text-[#ca3433] font-semibold">
-                        {workshop.subtitle}
-                      </p>
-                    )}
-
-                    <div className="flex items-center justify-center lg:justify-start space-x-3 text-[#ca3433]">
-                      <Calendar className="w-6 h-6 lg:w-8 lg:h-8" />
-                      <span className="text-2xl lg:text-3xl font-bold">{workshop.date}</span>
-                    </div>
-
-                    <div className="pt-6">
-                      <p className="text-lg text-[#0e1f3e] mb-2">at:</p>
-                      <p className="text-xl font-bold text-[#ca3433]">Exceed Learning Center</p>
-                      <p className="text-lg text-[#0e1f3e] italic">1360 Willis Ave, Albertson, NY</p>
-                    </div>
-
-                    <div className="pt-4 flex flex-col items-center lg:items-start">
-                      <div className="bg-[#ca3433] text-white px-6 py-3 inline-block mb-4 rounded-lg lg:rounded-none">
-                        <p className="text-lg">For adults and young adults</p>
-                      </div>
-                      <a href="https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01" target="_blank" rel="noopener noreferrer" className="block w-fit bg-[#ca3433] text-white px-8 py-4 text-xl font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                        REGISTER NOW
-                      </a>
-                    </div>
-
-                    <div className="pt-6 space-y-2">
-                      <p className="text-lg text-[#0e1f3e] font-semibold">Secure your spot today!</p>
-                      <p className="text-lg text-[#0e1f3e]">Adultclasses@exceedlearningcenterny.com</p>
-                      <p className="text-lg text-[#0e1f3e]">www.exceedlearningcenterny.com</p>
-                    </div>
-                  </div>
-
-                  <div className="relative order-1 lg:order-2">
-                    <div className="relative group">
-                      <div className="absolute -inset-4 bg-[#ca3433] opacity-20 rounded-full blur-2xl group-hover:opacity-30 transition-opacity"></div>
-                      <div className="relative w-full aspect-square lg:rounded-full rounded-2xl overflow-hidden border-4 lg:border-8 border-[#ca3433] shadow-2xl">
-                        <img
-                          src={localImages[index] ?? workshop.image}
-                          alt={workshop.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                    <div className="hidden lg:block absolute -right-8 top-0 w-1 h-full bg-[#ca3433]"></div>
-                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#ca3433] text-white px-6 py-3 w-max max-w-[90%] text-center rounded-lg lg:rounded-none">
-                      <div className="flex items-center space-x-3 justify-center">
-                        <div className="hidden lg:flex w-12 h-12 bg-white items-center justify-center">
-                          <div className="w-8 h-1 bg-[#ca3433]"></div>
-                        </div>
-                        <span className="font-bold text-lg">{workshop.type}</span>
-                      </div>
-                    </div>
-                  </div>
+                  <div className="absolute top-1/3 right-1/3 w-40 h-40 rounded-full bg-[#0e1f3e]"></div>
+                  <div className="absolute bottom-1/3 left-1/2 w-32 h-32 rounded-full bg-[#ca3433]"></div>
                 </>
               )}
             </div>
-          </div>
 
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block">
-            <div className="flex space-x-2">
-              {workshops.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => scrollToSection(idx)}
-                  className={`w-3 h-3 rounded-full transition-all ${idx === index ? 'bg-[#ca3433] w-8' : 'bg-[#0e1f3e] opacity-30'
-                    }`}
-                />
-              ))}
+            <div className={`container mx-auto ${isMasterclass ? 'px-8 lg:px-12' : 'px-6'} z-10`}>
+              <div className={`grid lg:grid-cols-2 ${isMasterclass ? 'gap-12 lg:gap-16 items-center max-w-7xl' : 'gap-8 lg:gap-12 items-center max-w-6xl'} mx-auto ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                }`}>
+                {index % 2 === 0 ? (
+                  <>
+                    <div className="relative">
+                      <div className="relative group">
+                        <div className={`absolute ${isMasterclass ? '-inset-6' : '-inset-4'} bg-[#ca3433] opacity-20 rounded-full blur-2xl group-hover:opacity-30 transition-opacity`}></div>
+                        <div className={`relative w-full aspect-square lg:rounded-full rounded-2xl overflow-hidden ${isMasterclass ? 'border-6 lg:border-12' : 'border-4 lg:border-8'} border-[#ca3433] shadow-2xl`}>
+                          <img
+                            src={localImages[index] ?? workshop.image}
+                            alt={workshop.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                      <div className="hidden lg:block absolute -left-8 top-0 w-1 h-full bg-[#ca3433]"></div>
+                      <div className={`absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#ca3433] text-white ${isMasterclass ? 'px-8 py-4' : 'px-6 py-3'} w-max max-w-[90%] text-center rounded-lg lg:rounded-none`}>
+                        <div className="flex items-center space-x-3 justify-center">
+                          <div className="hidden lg:flex w-12 h-12 bg-white items-center justify-center">
+                            <div className="w-8 h-1 bg-[#ca3433]"></div>
+                          </div>
+                          <span className={`font-bold ${isMasterclass ? 'text-xl' : 'text-lg'}`}>{workshop.type}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={`${isMasterclass ? 'space-y-8' : 'space-y-6'} text-center lg:text-left`}>
+                      <h2 className={`${isMasterclass ? 'text-4xl lg:text-6xl' : 'text-3xl lg:text-5xl'} font-bold text-[#0e1f3e] leading-tight`}>
+                        {workshop.title}
+                      </h2>
+                      {workshop.subtitle && (
+                        <p className={`${isMasterclass ? 'text-2xl lg:text-3xl' : 'text-xl lg:text-2xl'} text-[#ca3433] font-semibold`}>
+                          {workshop.subtitle}
+                        </p>
+                      )}
+
+                      <div className="flex items-center justify-center lg:justify-start space-x-3 text-[#ca3433]">
+                        <Calendar className={`${isMasterclass ? 'w-8 h-8 lg:w-10 lg:h-10' : 'w-6 h-6 lg:w-8 lg:h-8'}`} />
+                        <span className={`${isMasterclass ? 'text-2xl lg:text-4xl' : 'text-2xl lg:text-3xl'} font-bold`}>{workshop.date}</span>
+                      </div>
+
+                      <div className={`${isMasterclass ? 'pt-8' : 'pt-6'}`}>
+                        <p className={`${isMasterclass ? 'text-xl' : 'text-lg'} text-[#0e1f3e] mb-2`}>at:</p>
+                        <p className={`${isMasterclass ? 'text-2xl' : 'text-xl'} font-bold text-[#ca3433]`}>Exceed Learning Center</p>
+                        <p className={`${isMasterclass ? 'text-xl' : 'text-lg'} text-[#0e1f3e] italic`}>1360 Willis Ave, Albertson, NY</p>
+                      </div>
+
+                      <div className={`${isMasterclass ? 'pt-6' : 'pt-4'} flex flex-col items-center lg:items-start`}>
+                        <div className={`bg-[#ca3433] text-white ${isMasterclass ? 'px-8 py-4' : 'px-6 py-3'} inline-block mb-4 rounded-lg lg:rounded-none`}>
+                          <p className={`${isMasterclass ? 'text-xl' : 'text-lg'}`}>For adults and young adults</p>
+                        </div>
+                        {workshop.price && (
+                          <div className={`bg-[#0e1f3e] text-white ${isMasterclass ? 'px-8 py-4' : 'px-6 py-3'} inline-block mb-4 rounded-lg shadow-xl`}>
+                            <p className={`${isMasterclass ? 'text-2xl' : 'text-xl'} font-bold`}>{workshop.price}</p>
+                          </div>
+                        )}
+                        <a href={workshop.registrationUrl || "https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01"} target="_blank" rel="noopener noreferrer" className={`block w-fit bg-[#ca3433] text-white ${isMasterclass ? 'px-10 py-5 text-2xl' : 'px-8 py-4 text-xl'} font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                          REGISTER NOW
+                        </a>
+                      </div>
+
+                      <div className={`${isMasterclass ? 'pt-8' : 'pt-6'} space-y-2`}>
+                        <p className={`${isMasterclass ? 'text-xl' : 'text-lg'} text-[#0e1f3e] font-semibold`}>Secure your spot today!</p>
+                        <p className={`${isMasterclass ? 'text-xl' : 'text-lg'} text-[#0e1f3e]`}>Adultclasses@exceedlearningcenterny.com</p>
+                        <p className={`${isMasterclass ? 'text-xl' : 'text-lg'} text-[#0e1f3e]`}>www.exceedlearningcenterny.com</p>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className={`${isMasterclass ? 'space-y-8' : 'space-y-6'} text-center lg:text-left order-2 lg:order-1`}>
+                      <h2 className={`${isMasterclass ? 'text-4xl lg:text-6xl' : 'text-3xl lg:text-5xl'} font-bold text-[#0e1f3e] leading-tight`}>
+                        {workshop.title}
+                      </h2>
+                      {workshop.subtitle && (
+                        <p className={`${isMasterclass ? 'text-2xl lg:text-3xl' : 'text-xl lg:text-2xl'} text-[#ca3433] font-semibold`}>
+                          {workshop.subtitle}
+                        </p>
+                      )}
+
+                      <div className="flex items-center justify-center lg:justify-start space-x-3 text-[#ca3433]">
+                        <Calendar className={`${isMasterclass ? 'w-8 h-8 lg:w-10 lg:h-10' : 'w-6 h-6 lg:w-8 lg:h-8'}`} />
+                        <span className={`${isMasterclass ? 'text-2xl lg:text-4xl' : 'text-2xl lg:text-3xl'} font-bold`}>{workshop.date}</span>
+                      </div>
+
+                      <div className={`${isMasterclass ? 'pt-8' : 'pt-6'}`}>
+                        <p className={`${isMasterclass ? 'text-xl' : 'text-lg'} text-[#0e1f3e] mb-2`}>at:</p>
+                        <p className={`${isMasterclass ? 'text-2xl' : 'text-xl'} font-bold text-[#ca3433]`}>Exceed Learning Center</p>
+                        <p className={`${isMasterclass ? 'text-xl' : 'text-lg'} text-[#0e1f3e] italic`}>1360 Willis Ave, Albertson, NY</p>
+                      </div>
+
+                      <div className={`${isMasterclass ? 'pt-6' : 'pt-4'} flex flex-col items-center lg:items-start`}>
+                        <div className={`bg-[#ca3433] text-white ${isMasterclass ? 'px-8 py-4' : 'px-6 py-3'} inline-block mb-4 rounded-lg lg:rounded-none`}>
+                          <p className={`${isMasterclass ? 'text-xl' : 'text-lg'}`}>For adults and young adults</p>
+                        </div>
+                        {workshop.price && (
+                          <div className={`bg-[#0e1f3e] text-white ${isMasterclass ? 'px-8 py-4' : 'px-6 py-3'} inline-block mb-4 rounded-lg shadow-xl`}>
+                            <p className={`${isMasterclass ? 'text-2xl' : 'text-xl'} font-bold`}>{workshop.price}</p>
+                          </div>
+                        )}
+                        <a href={workshop.registrationUrl || "https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01"} target="_blank" rel="noopener noreferrer" className={`block w-fit bg-[#ca3433] text-white ${isMasterclass ? 'px-10 py-5 text-2xl' : 'px-8 py-4 text-xl'} font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                          REGISTER NOW
+                        </a>
+                      </div>
+
+                      <div className={`${isMasterclass ? 'pt-8' : 'pt-6'} space-y-2`}>
+                        <p className={`${isMasterclass ? 'text-xl' : 'text-lg'} text-[#0e1f3e] font-semibold`}>Secure your spot today!</p>
+                        <p className={`${isMasterclass ? 'text-xl' : 'text-lg'} text-[#0e1f3e]`}>Adultclasses@exceedlearningcenterny.com</p>
+                        <p className={`${isMasterclass ? 'text-xl' : 'text-lg'} text-[#0e1f3e]`}>www.exceedlearningcenterny.com</p>
+                      </div>
+                    </div>
+
+                    <div className="relative order-1 lg:order-2">
+                      <div className="relative group">
+                        <div className={`absolute ${isMasterclass ? '-inset-6' : '-inset-4'} bg-[#ca3433] opacity-20 rounded-full blur-2xl group-hover:opacity-30 transition-opacity`}></div>
+                        <div className={`relative w-full aspect-square lg:rounded-full rounded-2xl overflow-hidden ${isMasterclass ? 'border-6 lg:border-12' : 'border-4 lg:border-8'} border-[#ca3433] shadow-2xl`}>
+                          <img
+                            src={localImages[index] ?? workshop.image}
+                            alt={workshop.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                      <div className="hidden lg:block absolute -right-8 top-0 w-1 h-full bg-[#ca3433]"></div>
+                      <div className={`absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#ca3433] text-white ${isMasterclass ? 'px-8 py-4' : 'px-6 py-3'} w-max max-w-[90%] text-center rounded-lg lg:rounded-none`}>
+                        <div className="flex items-center space-x-3 justify-center">
+                          <div className="hidden lg:flex w-12 h-12 bg-white items-center justify-center">
+                            <div className="w-8 h-1 bg-[#ca3433]"></div>
+                          </div>
+                          <span className={`font-bold ${isMasterclass ? 'text-xl' : 'text-lg'}`}>{workshop.type}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
-        </section>
-      ))}
+
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block">
+              <div className="flex space-x-2">
+                {workshops.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => scrollToSection(idx)}
+                    className={`w-3 h-3 rounded-full transition-all ${idx === index ? 'bg-[#ca3433] w-8' : 'bg-[#0e1f3e] opacity-30'
+                      }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })}
       <footer className="bg-[#0e1f3e] text-white">
         <div className="container mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
