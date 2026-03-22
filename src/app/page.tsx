@@ -11,86 +11,48 @@ import mindMappingImg from '../images/mind-mapping.png';
 import focusAndFlowImg from '../images/focus-and-flow.png';
 import memoryMagicImg from '../images/memory-magic.png';
 import limitlessMasterclassImg from '../images/limitless-masterclass.jpg';
-import exceedLogo from '../images/exceed-new-logo-2026.png';
 
-const workshops = [
-  {
-    id: 'build-your-best-self',
-    date: 'April 6, 2026 • 6:00 PM',
-    title: 'Build Your Best Self',
-    subtitle: 'The Foundation of Character',
-    type: 'Workshop',
-    series: 'Limitless Growth Series',
-    image: trainYourBrainImg
-  },
-  {
-    id: 'resilience-2-0',
-    date: 'April 15, 2026 • 6:00 PM',
-    title: 'Resilience 2.0',
-    subtitle: 'How to Bounce Back Stronger',
-    type: 'Workshop',
-    series: 'Limitless Growth Series',
-    image: lifeLongLearningImg
-  },
-  {
-    id: 'courage-masterclass',
-    date: 'April 20, 2026 • 6:00 PM',
-    title: 'The Courage Masterclass',
-    subtitle: 'How to Become Fearless in Your Life',
-    type: 'Masterclass',
-    series: 'Limitless Growth Series',
-    image: mindMappingImg
-  },
-  {
-    id: 'values-vision',
-    date: 'April 27, 2026 • 6:00 PM',
-    title: 'Values & Vision',
-    subtitle: 'Designing the Character You Want to Live By',
-    type: 'Workshop',
-    series: 'Limitless Growth Series',
-    image: focusAndFlowImg
-  },
-  {
-    id: 'self-discipline-mastery',
-    date: 'April 29, 2026 • 6:00 PM',
-    title: 'Self-Discipline Mastery',
-    subtitle: 'How to Do What You Said You’d Do',
-    type: 'Workshop',
-    series: 'Limitless Growth Series',
-    image: memoryMagicImg
-  },
-  {
-    id: 'brain-training',
-    date: 'April 7 and 14, 2026',
-    title: 'Brain Training (8 weeks)',
-    subtitle: 'Comprehensive 8-Week Program',
-    type: 'Course',
-    image: limitlessMasterclassImg,
-    registrationUrl: 'https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01'
-  }
-];
+
+
 
 function App() {
   const [activeSection, setActiveSection] = useState(0);
-  const [dynamicWorkshops, setDynamicWorkshops] = useState(workshops);
+  const [dynamicWorkshops, setDynamicWorkshops] = useState<any[]>([]);
 
   useEffect(() => {
-    const fetchImages = async () => {
-      const updated = await Promise.all(workshops.map(async (w) => {
-        try {
-          const res = await fetch(`/api/pexels?query=${encodeURIComponent(w.title)}`);
-          if (res.ok) {
-            const data = await res.json();
-            if (data.imageUrl) {
-              return { ...w, image: { src: data.imageUrl } };
+    fetch('/api/analytics', { method: 'POST' }).catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    const fetchContentAndImages = async () => {
+      try {
+        const res = await fetch('/api/content');
+        const content = await res.json();
+        
+        if (!Array.isArray(content)) {
+          console.error("Failed to load content:", content);
+          return;
+        }
+
+        setDynamicWorkshops(content);
+
+        const updated = await Promise.all(content.map(async (w: any) => {
+          if (w.image?.src || w.imageUrl) return { ...w, image: { src: w.imageUrl || w.image.src } };
+          try {
+            const pxRes = await fetch(`/api/pexels?query=${encodeURIComponent(w.searchQuery || w.title)}`);
+            if (pxRes.ok) {
+              const data = await pxRes.json();
+              if (data.imageUrl) {
+                return { ...w, image: { src: data.imageUrl } };
+              }
             }
-          }
-        } catch (e) {}
-        return w;
-      }));
-      setDynamicWorkshops(updated);
+          } catch (e) {}
+          return w;
+        }));
+        setDynamicWorkshops(updated);
+      } catch(err) {}
     };
-    fetchImages();
+    fetchContentAndImages();
   }, []);
 
   useEffect(() => {
@@ -146,14 +108,14 @@ function App() {
               aria-label="Scroll to top"
             >
               <img
-                src={exceedLogo.src}
+                src="/exceed-new-logo-2026.png"
                 alt="Exceed Learning Center"
                 className="h-8 w-auto"
               />
               <h1 className="text-xl font-bold font-display">WORKSHOPS & MASTERCLASS</h1>
             </div>
             <div className="hidden lg:flex space-x-6">
-              {dynamicWorkshops.map((workshop, index) => (
+              {Array.isArray(dynamicWorkshops) && dynamicWorkshops.map((workshop: any, index: number) => (
                 <button
                   key={workshop.id}
                   onClick={() => scrollToSection(index)}
@@ -168,7 +130,7 @@ function App() {
         </div>
       </nav>
 
-      {dynamicWorkshops.map((workshop, index) => {
+      {Array.isArray(dynamicWorkshops) && dynamicWorkshops.map((workshop: any, index: number) => {
         const isMasterclass = workshop.type === 'Masterclass';
         return (
           <section
@@ -331,7 +293,7 @@ function App() {
 
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block">
               <div className="flex space-x-2">
-                {dynamicWorkshops.map((_, idx) => (
+                {Array.isArray(dynamicWorkshops) && dynamicWorkshops.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => scrollToSection(idx)}
@@ -348,7 +310,7 @@ function App() {
         <div className="container mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <img
-              src={exceedLogo.src}
+              src="/exceed-new-logo-2026.png"
               alt="Exceed Learning Center"
               className="h-10 w-auto"
             />

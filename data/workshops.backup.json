@@ -1,0 +1,67 @@
+[
+  {
+    "id": "build-your-best-self",
+    "date": "April 6, 2026 • 6:00 PM",
+    "title": "Build Your Best Self",
+    "subtitle": "The Foundation of Character",
+    "type": "Workshop",
+    "series": "Limitless Growth Series",
+    "searchQuery": "personal development confidence success"
+  },
+  {
+    "id": "resilience-2-0",
+    "date": "April 15, 2026 • 6:00 PM",
+    "title": "Resilience 2.0",
+    "subtitle": "How to Bounce Back Stronger",
+    "type": "Workshop",
+    "series": "Limitless Growth Series",
+    "searchQuery": "resilience climbing mountain overcoming"
+  },
+  {
+    "id": "courage-masterclass",
+    "date": "April 20, 2026 • 6:00 PM",
+    "title": "The Courage Masterclass",
+    "subtitle": "How to Become Fearless in Your Life",
+    "type": "Masterclass",
+    "series": "Limitless Growth Series",
+    "searchQuery": "brave courage hero skydiving"
+  },
+  {
+    "id": "values-vision",
+    "date": "April 27, 2026 • 6:00 PM",
+    "title": "Values & Vision",
+    "subtitle": "Designing the Character You Want to Live By",
+    "type": "Workshop",
+    "series": "Limitless Growth Series",
+    "searchQuery": "vision planning strategy telescope looking ahead"
+  },
+  {
+    "id": "self-discipline-mastery",
+    "date": "April 29, 2026 • 6:00 PM",
+    "title": "Self-Discipline Mastery",
+    "subtitle": "How to Do What You Said You’d Do",
+    "type": "Workshop",
+    "series": "Limitless Growth Series",
+    "searchQuery": "discipline workout early morning routine productivity running"
+  },
+  {
+    "id": "brain-training",
+    "date": "April 7 and 14, 2026",
+    "title": "Brain Training (8 weeks)",
+    "subtitle": "Comprehensive 8-Week Program",
+    "type": "Course",
+    "searchQuery": "brain puzzle neurology smart intelligence thinking",
+    "registrationUrl": "https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01"
+  },
+  {
+    "id": "workshop-1774222764628",
+    "title": "New Workshop",
+    "subtitle": "Workshop subtitle",
+    "date": "April 2026 • 6:00 PM",
+    "type": "Workshop",
+    "series": "Limitless Growth Series",
+    "searchQuery": "personal development motivation growth",
+    "imageUrl": "",
+    "registrationUrl": "https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01"
+  }
+]
