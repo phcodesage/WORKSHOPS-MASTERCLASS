@@ -217,7 +217,7 @@ function App() {
                       </div>
 
                       <div className={`pt-1 md:pt-4 lg:pt-6 text-center lg:text-left`}>
-                        <p className={`text-xs md:text-sm lg:text-base text-[#0e1f3e]`}>Adultclasses@exceedlearningcenterny.com</p>
+                        <p className={`text-xs md:text-sm lg:text-base text-[#0e1f3e]`}>programs@exceedlearningcenterny.com</p>
                       </div>
                     </div>
                   </>
@@ -252,7 +252,7 @@ function App() {
                       </div>
 
                       <div className={`pt-1 md:pt-4 lg:pt-6 text-center lg:text-left`}>
-                        <p className={`text-xs md:text-sm lg:text-base text-[#0e1f3e]`}>Adultclasses@exceedlearningcenterny.com</p>
+                        <p className={`text-xs md:text-sm lg:text-base text-[#0e1f3e]`}>programs@exceedlearningcenterny.com</p>
                       </div>
                     </div>
 
@@ -318,7 +318,7 @@ function App() {
           </div>
           <div className="text-sm opacity-80 text-center md:text-right">
             <p>1360 Willis Ave, Albertson, NY</p>
-            <p>Adultclasses@exceedlearningcenterny.com</p>
+            <p>programs@exceedlearningcenterny.com</p>
             <p>www.exceedlearningcenterny.com</p>
           </div>
         </div>
