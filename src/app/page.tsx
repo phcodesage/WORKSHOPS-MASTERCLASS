@@ -3,6 +3,7 @@
 import { Calendar } from 'lucide-react';
 import Lenis from 'lenis';
 import { useState, useEffect } from 'react';
+import PaymentModal, { calcCardPrice } from '../PaymentModal';
 
 // Workshop images
 import trainYourBrainImg from '../images/train-your-brain.jpg';
@@ -18,6 +19,14 @@ import limitlessMasterclassImg from '../images/limitless-masterclass.jpg';
 function App() {
   const [activeSection, setActiveSection] = useState(0);
   const [dynamicWorkshops, setDynamicWorkshops] = useState<any[]>([]);
+  const [paymentModalOpen, setPaymentModalOpen] = useState(false);
+  const [selectedWorkshop, setSelectedWorkshop] = useState<any>(null);
+  const DEFAULT_STRIPE_LINK = 'https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01';
+
+  function openPayment(workshop: any) {
+    setSelectedWorkshop(workshop);
+    setPaymentModalOpen(true);
+  }
 
   useEffect(() => {
     fetch('/api/analytics', { method: 'POST' }).catch(() => {});
@@ -98,6 +107,14 @@ function App() {
 
   return (
     <div className="relative">
+      <PaymentModal
+        isOpen={paymentModalOpen}
+        onClose={() => setPaymentModalOpen(false)}
+        courseName={selectedWorkshop ? selectedWorkshop.title : 'Workshop'}
+        cashPrice={selectedWorkshop?.price || '$79'}
+        cardPrice={calcCardPrice(selectedWorkshop?.price || '$79')}
+        stripeLink={selectedWorkshop?.registrationUrl || DEFAULT_STRIPE_LINK}
+      />
       <nav className="fixed top-0 left-0 right-0 bg-[#0e1f3e] text-white z-50 shadow-lg">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
@@ -211,9 +228,9 @@ function App() {
 
                       <div className={`pt-1 md:pt-4 flex flex-col items-center lg:items-start`}>
                         <p className={`text-xs md:text-sm lg:text-lg text-[#0e1f3e] mb-1 md:mb-2`}>For adults and young adults</p>
-                        <a href={workshop.registrationUrl || "https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01"} target="_blank" rel="noopener noreferrer" className={`block w-fit bg-[#ca3433] text-white px-5 py-2 md:px-8 md:py-4 text-sm md:text-xl font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                          REGISTER NOW
-                        </a>
+                        <button onClick={() => openPayment(workshop)} className={`block w-fit bg-[#ca3433] text-white px-5 py-2 md:px-8 md:py-4 text-sm md:text-xl font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                          REGISTER NOW — CHOOSE PAYMENT
+                        </button>
                       </div>
 
                       <div className={`pt-1 md:pt-4 lg:pt-6 text-center lg:text-left`}>
@@ -246,9 +263,9 @@ function App() {
 
                       <div className={`pt-1 md:pt-4 flex flex-col items-center lg:items-start`}>
                         <p className={`text-xs md:text-sm lg:text-lg text-[#0e1f3e] mb-1 md:mb-2`}>For adults and young adults</p>
-                        <a href={workshop.registrationUrl || "https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01"} target="_blank" rel="noopener noreferrer" className={`block w-fit bg-[#ca3433] text-white px-5 py-2 md:px-8 md:py-4 text-sm md:text-xl font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                          REGISTER NOW
-                        </a>
+                        <button onClick={() => openPayment(workshop)} className={`block w-fit bg-[#ca3433] text-white px-5 py-2 md:px-8 md:py-4 text-sm md:text-xl font-semibold rounded-lg hover:bg-[#0e1f3e] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                          REGISTER NOW — CHOOSE PAYMENT
+                        </button>
                       </div>
 
                       <div className={`pt-1 md:pt-4 lg:pt-6 text-center lg:text-left`}>
