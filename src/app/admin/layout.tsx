@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Eye, EyeOff, LayoutDashboard, Edit3, Globe, LogOut, Image as ImageIcon } from "lucide-react";
+import { Eye, EyeOff, LayoutDashboard, Edit3, Globe, LogOut, Image as ImageIcon, Banknote } from "lucide-react";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -114,6 +114,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { href: "/admin", label: "Analytics", icon: LayoutDashboard },
     { href: "/admin/editor", label: "Visual CMS", icon: Edit3 },
     { href: "/admin/media", label: "Media Library", icon: ImageIcon },
+    { href: "/admin/payments", label: "Payments", icon: Banknote },
   ];
 
   return (
