@@ -1,29 +1,47 @@
 [
   {
-    "id": "courage-masterclass",
-    "date": "April 20, 2026 • 6:00 PM",
-    "title": "The Courage Masterclass",
-    "subtitle": "How to Become Fearless in Your Life",
-    "type": "Masterclass",
-    "series": "Limitless Growth Series",
-    "searchQuery": "brave courage hero skydiving"
+    "id": "awaken-inner-light",
+    "date": "May 3, 2026 • 6:00 PM",
+    "title": "Awaken Your Inner Light",
+    "subtitle": "Spiritual Growth for Every Day Life",
+    "type": "Workshop",
+    "series": "Spiritual Living Series",
+    "searchQuery": "spiritual awakening golden light meditation soul sunrise"
   },
   {
-    "id": "values-vision",
-    "date": "April 27, 2026 • 6:00 PM",
-    "title": "Values & Vision",
-    "subtitle": "Designing the Character You Want to Live By",
+    "id": "stillness-and-presence",
+    "date": "May 10, 2026 • 6:00 PM",
+    "title": "Stillness & Presence",
+    "subtitle": "The Art of Mindful Living",
     "type": "Workshop",
-    "series": "Limitless Growth Series",
-    "searchQuery": "vision planning strategy telescope looking ahead"
+    "series": "Spiritual Living Series",
+    "searchQuery": "mindfulness meditation peaceful stillness calm nature zen"
   },
   {
-    "id": "self-discipline-mastery",
-    "date": "April 29, 2026 • 6:00 PM",
-    "title": "Self-Discipline Mastery",
-    "subtitle": "How to Do What You Said You’d Do",
+    "id": "soul-aligned-life",
+    "date": "May 17, 2026 • 6:00 PM",
+    "title": "The Soul Aligned Life",
+    "subtitle": "Living with Meaning & Purpose",
     "type": "Workshop",
-    "series": "Limitless Growth Series",
-    "searchQuery": "discipline workout early morning routine productivity running"
+    "series": "Spiritual Living Series",
+    "searchQuery": "purpose meaning life journey path spiritual direction"
+  },
+  {
+    "id": "spiritual-resilience",
+    "date": "May 24, 2026 • 6:00 PM",
+    "title": "Spiritual Resilience",
+    "subtitle": "Finding Strength Through Life's Challenges",
+    "type": "Workshop",
+    "series": "Spiritual Living Series",
+    "searchQuery": "resilience strength mountain summit overcoming challenges sunrise"
+  },
+  {
+    "id": "heart-centered-living",
+    "date": "May 31, 2026 • 6:00 PM",
+    "title": "Heart-Centered Living",
+    "subtitle": "Compassion, Forgiveness & Inner Freedom",
+    "type": "Workshop",
+    "series": "Spiritual Living Series",
+    "searchQuery": "compassion love heart kindness people connection warmth"
   }
 ]
