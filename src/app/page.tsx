@@ -149,6 +149,120 @@ function App() {
 
       {Array.isArray(dynamicWorkshops) && dynamicWorkshops.map((workshop: any, index: number) => {
         const isMasterclass = workshop.type === 'Masterclass';
+        const isSummit = workshop.type === 'Summit';
+
+        if (isSummit) {
+          return (
+            <section
+              key={workshop.id}
+              id={workshop.id}
+              className="workshop-section min-h-screen flex items-center justify-center relative py-20 overflow-hidden"
+              style={{ background: 'linear-gradient(135deg, #0a1628 0%, #0e1f3e 50%, #1a0a0a 100%)' }}
+            >
+              {/* Background decoration */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-[#ca3433] blur-3xl"></div>
+                <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-[#ca3433] blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-blue-500 blur-3xl"></div>
+              </div>
+
+              <div className="container mx-auto px-4 md:px-6 z-10 max-w-6xl">
+                {/* Header */}
+                <div className="text-center mb-10">
+                  <div className="inline-block bg-[#ca3433] text-white text-xs font-bold tracking-widest uppercase px-4 py-1 rounded mb-4">
+                    {workshop.type}
+                  </div>
+                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold font-display text-white leading-tight mb-3">
+                    COMMUNICATION IN BUSINESS{' '}
+                    <span className="text-[#ca3433]">SUMMIT</span>
+                  </h2>
+                  <p className="text-lg md:text-xl text-gray-300 tracking-widest uppercase mb-4">
+                    {workshop.subtitle}
+                  </p>
+                  <div className="flex items-center justify-center space-x-2 text-[#ca3433] mb-2">
+                    <Calendar className="w-5 h-5" />
+                    <span className="text-base md:text-lg font-bold">{workshop.date}</span>
+                  </div>
+                  <p className="text-gray-400 text-sm">
+                    at: <span className="text-white font-semibold">Exceed Learning Center</span>{' '}
+                    <span className="italic">• 1360 Willis Ave, Albertson, NY</span>
+                  </p>
+                </div>
+
+                {/* Speakers grid */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                  {(workshop.speakers || []).map((speaker: any, i: number) => (
+                    <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-4 text-center hover:bg-white/10 transition-all">
+                      {/* Speaker image */}
+                      <div className="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full bg-gradient-to-br from-[#ca3433] to-[#0e1f3e] border-2 border-[#ca3433] mb-3 overflow-hidden flex items-center justify-center">
+                        {workshop.speakerImages?.[i] ? (
+                          <img src={workshop.speakerImages[i]} alt={speaker.name} className="w-full h-full object-cover object-top" />
+                        ) : (
+                          <span className="text-white text-2xl font-bold opacity-60">{speaker.name.charAt(0)}</span>
+                        )}
+                      </div>
+                      <h3 className="text-white font-bold text-sm md:text-base leading-tight mb-1">{speaker.name}</h3>
+                      <p className="text-[#ca3433] text-xs font-semibold uppercase tracking-wide mb-2">{speaker.role}</p>
+                      <p className="text-gray-400 text-xs leading-snug">
+                        <span className="text-gray-500 uppercase text-[10px] tracking-wider block mb-1">Topic:</span>
+                        {speaker.topic}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Tagline + CTA */}
+                <div className="text-center">
+                  {workshop.tagline && (
+                    <div className="inline-flex items-center gap-2 border border-white/20 rounded-lg px-5 py-2 text-white text-sm font-semibold tracking-wide mb-6">
+                      📈 {workshop.tagline}
+                    </div>
+                  )}
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+                    <div className="flex items-center gap-2 text-gray-300 text-sm">
+                      <span>📅</span>
+                      <span>Whole Day Event</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-300 text-sm">
+                      <span>📍</span>
+                      <span>Exceed Learning Center</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-300 text-sm">
+                      <span>🕘</span>
+                      <span>9:00 AM – 5:00 PM</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="text-4xl font-bold text-white">
+                      {workshop.price} <span className="text-gray-400 text-lg font-normal">regular price</span>
+                    </div>
+                    <button
+                      onClick={() => openPayment(workshop)}
+                      className="bg-[#ca3433] text-white px-10 py-4 text-lg font-bold rounded-lg hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-lg shadow-red-900/40"
+                    >
+                      REGISTER NOW — CHOOSE PAYMENT
+                    </button>
+                    <p className="text-gray-500 text-xs">Join us for a day of insight, strategy, and connection.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Scroll dots */}
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block">
+                <div className="flex space-x-2">
+                  {Array.isArray(dynamicWorkshops) && dynamicWorkshops.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => scrollToSection(idx)}
+                      className={`w-3 h-3 rounded-full transition-all ${idx === index ? 'bg-[#ca3433] w-8' : 'bg-white opacity-30'}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </section>
+          );
+        }
+
         return (
           <section
             key={workshop.id}
