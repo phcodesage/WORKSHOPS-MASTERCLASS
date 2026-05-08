@@ -19,11 +19,21 @@ export async function GET() {
     
     const doc = await db.collection('content').findOne({ type: 'workshops' });
     
+    const seedData = getFallback();
+
     if (doc && doc.data) {
+      // If local file has more items than DB (e.g. new entries added), re-seed from file
+      if (Array.isArray(doc.data) && Array.isArray(seedData) && seedData.length > doc.data.length) {
+        await db.collection('content').updateOne(
+          { type: 'workshops' },
+          { $set: { data: seedData } },
+          { upsert: true }
+        );
+        return NextResponse.json(seedData);
+      }
       return NextResponse.json(doc.data);
     }
     
-    const seedData = getFallback();
     if (seedData.length > 0) {
       await db.collection('content').updateOne(
         { type: 'workshops' },
