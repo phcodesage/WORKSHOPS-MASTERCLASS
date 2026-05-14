@@ -234,7 +234,7 @@ function App() {
                   </div>
                   <div className="flex flex-col items-center gap-3">
                     <div className="text-4xl font-bold text-white">
-                      {workshop.price} <span className="text-gray-400 text-lg font-normal">regular price</span>
+                      {workshop.price}
                     </div>
                     <button
                       onClick={() => openPayment(workshop)}
