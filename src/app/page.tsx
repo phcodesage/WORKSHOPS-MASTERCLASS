@@ -21,6 +21,7 @@ function App() {
   const [dynamicWorkshops, setDynamicWorkshops] = useState<any[]>([]);
   const [paymentModalOpen, setPaymentModalOpen] = useState(false);
   const [selectedWorkshop, setSelectedWorkshop] = useState<any>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const DEFAULT_STRIPE_LINK = 'https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01';
 
   function openPayment(workshop: any) {
@@ -66,6 +67,9 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setShowScrollTop(scrollY > 300);
+
       const sections = document.querySelectorAll('.workshop-section');
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
@@ -437,6 +441,19 @@ function App() {
           </section>
         );
       })}
+      {/* Scroll to top button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+          className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-[#ca3433] text-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#0e1f3e] hover:scale-110 transition-all duration-300"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="18 15 12 9 6 15" />
+          </svg>
+        </button>
+      )}
+
       <footer className="bg-[#0e1f3e] text-white">
         <div className="container mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
