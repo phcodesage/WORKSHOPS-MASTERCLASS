@@ -2,7 +2,7 @@
 
 import { Calendar } from 'lucide-react';
 import Lenis from 'lenis';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PaymentModal, { calcCardPrice } from '../PaymentModal';
 
 // Workshop images
@@ -22,6 +22,7 @@ function App() {
   const [paymentModalOpen, setPaymentModalOpen] = useState(false);
   const [selectedWorkshop, setSelectedWorkshop] = useState<any>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const lenisRef = useRef<Lenis | null>(null);
   const DEFAULT_STRIPE_LINK = 'https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01';
 
   function openPayment(workshop: any) {
@@ -87,6 +88,7 @@ function App() {
 
   useEffect(() => {
     const lenis = new Lenis();
+    lenisRef.current = lenis;
 
     function raf(time: number) {
       lenis.raf(time);
@@ -97,6 +99,7 @@ function App() {
 
     return () => {
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 
@@ -106,7 +109,11 @@ function App() {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: false });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
