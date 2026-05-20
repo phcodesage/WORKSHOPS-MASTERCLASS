@@ -23,7 +23,7 @@ function App() {
   const [selectedWorkshop, setSelectedWorkshop] = useState<any>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const lenisRef = useRef<Lenis | null>(null);
-  const DEFAULT_STRIPE_LINK = 'https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01';
+  const DEFAULT_STRIPE_LINK = 'https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=f857e4e1-5308-11f1-a8e1-12a0879a85b1';
 
   function openPayment(workshop: any) {
     setSelectedWorkshop(workshop);

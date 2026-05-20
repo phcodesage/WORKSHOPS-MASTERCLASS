@@ -129,7 +129,7 @@ export default function VisualEditor() {
       series: "Limitless Growth Series",
       searchQuery: "personal development motivation growth",
       imageUrl: "",
-      registrationUrl: "https://buy.stripe.com/5kQ28k9Kk9se9S92SfdfG01"
+      registrationUrl: "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=f857e4e1-5308-11f1-a8e1-12a0879a85b1"
     };
     setWorkshops(prev => [...prev, newItem]);
 
@@ -281,7 +281,7 @@ export default function VisualEditor() {
                 </div>
                 {workshop.registrationUrl !== undefined && (
                   <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Stripe Registration Link</label>
+                    <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Valor Pay Registration Link</label>
                     <input type="text" value={workshop.registrationUrl || ""}
                       onChange={(e) => handleChange(index, 'registrationUrl', e.target.value)}
                       className="w-full border border-gray-300 rounded-lg p-2.5 text-slate-800 focus:ring-2 focus:ring-[#ca3433] outline-none" />
