@@ -22,13 +22,10 @@ export async function GET() {
     const seedData = getFallback();
 
     if (doc && doc.data) {
-      // Re-seed if local file has more items OR if the first item's date has changed
-      const dbFirst = Array.isArray(doc.data) && doc.data[0];
-      const localFirst = Array.isArray(seedData) && seedData[0];
-      const dateChanged = dbFirst && localFirst && dbFirst.id === localFirst.id && dbFirst.date !== localFirst.date;
-      const countChanged = Array.isArray(doc.data) && Array.isArray(seedData) && seedData.length > doc.data.length;
+      // Re-seed if local file has different content compared to database data
+      const dataChanged = JSON.stringify(doc.data) !== JSON.stringify(seedData);
 
-      if (countChanged || dateChanged) {
+      if (dataChanged) {
         await db.collection('content').updateOne(
           { type: 'workshops' },
           { $set: { data: seedData } },
