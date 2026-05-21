@@ -23,7 +23,7 @@ function App() {
   const [selectedWorkshop, setSelectedWorkshop] = useState<any>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const lenisRef = useRef<Lenis | null>(null);
-  const DEFAULT_STRIPE_LINK = 'https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=f857e4e1-5308-11f1-a8e1-12a0879a85b1';
+  const DEFAULT_STRIPE_LINK = 'https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1';
 
   function openPayment(workshop: any) {
     setSelectedWorkshop(workshop);
@@ -122,9 +122,9 @@ function App() {
         isOpen={paymentModalOpen}
         onClose={() => setPaymentModalOpen(false)}
         courseName={selectedWorkshop ? selectedWorkshop.title : 'Workshop'}
-        cashPrice={selectedWorkshop?.price || '$79'}
-        cardPrice={calcCardPrice(selectedWorkshop?.price || '$79')}
-        stripeLink={selectedWorkshop?.registrationUrl || DEFAULT_STRIPE_LINK}
+        cashPrice={selectedWorkshop?.price || '$47'}
+        cardPrice={calcCardPrice(selectedWorkshop?.price || '$47')}
+        cardPaymentLink={selectedWorkshop?.registrationUrl || DEFAULT_STRIPE_LINK}
       />
       <nav className="fixed top-0 left-0 right-0 bg-[#0e1f3e] text-white z-50 shadow-lg">
         <div className="container mx-auto px-6 py-4">

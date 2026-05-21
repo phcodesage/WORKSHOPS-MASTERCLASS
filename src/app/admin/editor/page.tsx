@@ -129,7 +129,7 @@ export default function VisualEditor() {
       series: "Limitless Growth Series",
       searchQuery: "personal development motivation growth",
       imageUrl: "",
-      registrationUrl: "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=f857e4e1-5308-11f1-a8e1-12a0879a85b1"
+      registrationUrl: "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1"
     };
     setWorkshops(prev => [...prev, newItem]);
 

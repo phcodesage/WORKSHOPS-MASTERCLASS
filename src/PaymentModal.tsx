@@ -9,7 +9,7 @@ interface PaymentModalProps {
   courseName: string;
   cashPrice: string;   // e.g. "$160"
   cardPrice: string;   // e.g. "$166.40" (price + 4%)
-  stripeLink: string;
+  cardPaymentLink: string;
 }
 
 export function calcCardPrice(priceStr: string): string {
@@ -24,7 +24,7 @@ export default function PaymentModal({
   courseName,
   cashPrice,
   cardPrice,
-  stripeLink,
+  cardPaymentLink,
 }: PaymentModalProps) {
   const [step, setStep] = useState<"choose" | "zelle" | "done">("choose");
   const [form, setForm] = useState({ name: "", phone: "", reference: "" });
@@ -65,7 +65,7 @@ export default function PaymentModal({
   }
 
   function handleCardPay() {
-    window.open(stripeLink, "_blank", "noopener,noreferrer");
+    window.open(cardPaymentLink, "_blank", "noopener,noreferrer");
     handleClose();
   }
 
@@ -184,6 +184,10 @@ export default function PaymentModal({
             <CreditCard className="w-4 h-4 shrink-0" />
             Card: <span className="text-[#d53033]">{cardPrice}</span>
             <span className="text-amber-600 font-normal">— includes 4% processing fee</span>
+          </div>
+          <div className="flex items-center gap-2 text-xs font-semibold text-amber-800 border-t border-amber-200/60 pt-1 mt-1">
+            <span className="text-amber-700">Invoice Number:</span>
+            <span className="font-mono bg-amber-100 px-1 py-0.5 rounded text-amber-900 select-all font-bold">Workshop</span>
           </div>
         </div>
 
