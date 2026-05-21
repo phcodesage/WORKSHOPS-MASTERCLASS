@@ -10,6 +10,7 @@ interface PaymentModalProps {
   cashPrice: string;   // e.g. "$160"
   cardPrice: string;   // e.g. "$166.40" (price + 4%)
   cardPaymentLink: string;
+  invoiceNumber?: string;
 }
 
 export function calcCardPrice(priceStr: string): string {
@@ -25,6 +26,7 @@ export default function PaymentModal({
   cashPrice,
   cardPrice,
   cardPaymentLink,
+  invoiceNumber,
 }: PaymentModalProps) {
   const [step, setStep] = useState<"choose" | "zelle" | "done">("choose");
   const [form, setForm] = useState({ name: "", phone: "", reference: "" });
@@ -187,7 +189,7 @@ export default function PaymentModal({
           </div>
           <div className="flex items-center gap-2 text-xs font-semibold text-amber-800 border-t border-amber-200/60 pt-1 mt-1">
             <span className="text-amber-700">Invoice Number:</span>
-            <span className="font-mono bg-amber-100 px-1 py-0.5 rounded text-amber-900 select-all font-bold">Workshop</span>
+            <span className="font-mono bg-amber-100 px-1 py-0.5 rounded text-amber-900 select-all font-bold">{invoiceNumber || "Workshop"}</span>
           </div>
         </div>
 

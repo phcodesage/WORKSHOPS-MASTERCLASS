@@ -7,6 +7,8 @@
     "type": "Summit",
     "series": "Business Summit",
     "price": "$199",
+    "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=83d3c1c9-5302-11f1-a8e1-12a0879a85b1",
+    "invoiceNumber": "SUMMIT",
     "speakers": [
       {
         "name": "David B. Alexander",
