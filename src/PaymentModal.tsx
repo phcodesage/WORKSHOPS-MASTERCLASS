@@ -158,7 +158,7 @@ export default function PaymentModal({
       onWheel={(e) => e.stopPropagation()}
       onTouchMove={(e) => e.stopPropagation()}
     >
-      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md flex flex-col my-auto relative" style={{ maxHeight: "calc(100dvh - 2rem)" }}>
+      <div className={`bg-white rounded-3xl shadow-2xl w-full flex flex-col my-auto relative transition-all duration-300 ${step === "zelle" ? "max-w-md md:max-w-4xl" : "max-w-md"}`} style={{ maxHeight: "calc(100dvh - 2rem)" }}>
         {/* Header */}
         <div className="px-5 py-4 flex items-center justify-between border-b bg-[#05264d] shrink-0">
           <div>

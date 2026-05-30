@@ -41,58 +41,58 @@
     "searchQuery": "business communication summit conference professional speakers"
   },
   {
-    "id": "awaken-inner-light",
-    "date": "May 3, 2026 • 6:00 PM",
-    "title": "Awaken Your Inner Light",
-    "subtitle": "Spiritual Growth for Every Day Life",
+    "id": "love-blueprint",
+    "date": "June 7, 2026 • 6:00 PM",
+    "title": "The Love Blueprint",
+    "subtitle": "How to Build Healthy, Thriving Relationships",
     "type": "Workshop",
-    "series": "Spiritual Living Series",
+    "series": "Relationship Series",
     "price": "$47",
     "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1",
-    "searchQuery": "spiritual awakening golden light meditation soul sunrise"
+    "searchQuery": "healthy relationships love couple connection"
   },
   {
-    "id": "stillness-and-presence",
-    "date": "May 10, 2026 • 6:00 PM",
-    "title": "Stillness & Presence",
-    "subtitle": "The Art of Mindful Living",
+    "id": "communication-that-connects",
+    "date": "June 14, 2026 • 6:00 PM",
+    "title": "Communication That Connects",
+    "subtitle": "The Art of Speaking & Listening with Love",
     "type": "Workshop",
-    "series": "Spiritual Living Series",
+    "series": "Relationship Series",
     "price": "$47",
     "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1",
-    "searchQuery": "mindfulness meditation peaceful stillness calm nature zen"
+    "searchQuery": "conversation talking couple understanding listening"
   },
   {
-    "id": "soul-aligned-life",
-    "date": "May 17, 2026 • 6:00 PM",
-    "title": "The Soul Aligned Life",
-    "subtitle": "Living with Meaning & Purpose",
+    "id": "healing-relationship-wounds",
+    "date": "June 21, 2026 • 6:00 PM",
+    "title": "Healing Relationship Wounds",
+    "subtitle": "From Hurt to Connection",
     "type": "Workshop",
-    "series": "Spiritual Living Series",
+    "series": "Relationship Series",
     "price": "$47",
     "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1",
-    "searchQuery": "purpose meaning life journey path spiritual direction"
+    "searchQuery": "healing heart comfort support holding hands"
   },
   {
-    "id": "spiritual-resilience",
-    "date": "May 24, 2026 • 6:00 PM",
-    "title": "Spiritual Resilience",
-    "subtitle": "Finding Strength Through Life's Challenges",
+    "id": "boundaries-self-respect",
+    "date": "June 28, 2026 • 6:00 PM",
+    "title": "Boundaries & Self-Respect",
+    "subtitle": "The Secret to Loving Without Losing Yourself",
     "type": "Workshop",
-    "series": "Spiritual Living Series",
+    "series": "Relationship Series",
     "price": "$47",
     "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1",
-    "searchQuery": "resilience strength mountain summit overcoming challenges sunrise"
+    "searchQuery": "boundaries self care reflection confidence"
   },
   {
-    "id": "heart-centered-living",
-    "date": "May 31, 2026 • 6:00 PM",
-    "title": "Heart-Centered Living",
-    "subtitle": "Compassion, Forgiveness & Inner Freedom",
-    "type": "Workshop",
-    "series": "Spiritual Living Series",
+    "id": "love-languages-masterclass",
+    "date": "June 30, 2026 • 6:00 PM",
+    "title": "The Love Languages Masterclass",
+    "subtitle": "Discover How to Speak and Understand Love",
+    "type": "Masterclass",
+    "series": "Relationship Series",
     "price": "$47",
     "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1",
-    "searchQuery": "compassion love heart kindness people connection warmth"
+    "searchQuery": "love hearts expression communication"
   }
 ]
