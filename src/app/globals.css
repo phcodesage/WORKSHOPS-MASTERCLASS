@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ===== AI Summit (cyberpunk) ===== */
+@keyframes ai-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes ai-pulse-text {
+  0%, 100% {
+    opacity: 0.85;
+    text-shadow: 0 0 18px rgba(0, 229, 255, 0.65), 0 0 42px rgba(123, 44, 191, 0.5);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(0, 229, 255, 0.95), 0 0 70px rgba(123, 44, 191, 0.7);
+  }
+}
+
+@keyframes ai-ring-spin {
+  from { transform: rotateX(72deg) rotate(0deg); }
+  to { transform: rotateX(72deg) rotate(360deg); }
+}
+
+@keyframes ai-ring-glow {
+  0%, 100% { opacity: 0.55; box-shadow: 0 0 25px rgba(0, 229, 255, 0.5), inset 0 0 25px rgba(0, 229, 255, 0.4); }
+  50% { opacity: 1; box-shadow: 0 0 55px rgba(0, 229, 255, 0.85), inset 0 0 45px rgba(123, 44, 191, 0.55); }
+}
+
+@keyframes ai-twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes ai-beam {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.7; }
+}
+
+.ai-hologram { perspective: 900px; }
+
+.ai-hologram-text {
+  animation: ai-float 6s ease-in-out infinite, ai-pulse-text 3.2s ease-in-out infinite;
+  background: linear-gradient(180deg, #7df9ff 0%, #00e5ff 45%, #7b2cbf 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 22px rgba(0, 229, 255, 0.55));
+}
+
+.ai-ring {
+  border-radius: 50%;
+  border: 2px solid rgba(0, 229, 255, 0.7);
+  transform-style: preserve-3d;
+}
+.ai-ring--1 { animation: ai-ring-spin 9s linear infinite, ai-ring-glow 3s ease-in-out infinite; }
+.ai-ring--2 { animation: ai-ring-spin 13s linear infinite reverse, ai-ring-glow 3.6s ease-in-out infinite; border-color: rgba(123, 44, 191, 0.7); }
+.ai-ring--3 { animation: ai-ring-spin 17s linear infinite, ai-ring-glow 4.2s ease-in-out infinite; border-color: rgba(247, 37, 133, 0.55); }
+
+.ai-beam {
+  background: linear-gradient(180deg, rgba(0, 229, 255, 0) 0%, rgba(0, 229, 255, 0.35) 60%, rgba(0, 229, 255, 0.6) 100%);
+  animation: ai-beam 3s ease-in-out infinite;
+}
+
+.ai-particle { animation: ai-twinkle 2.8s ease-in-out infinite; }

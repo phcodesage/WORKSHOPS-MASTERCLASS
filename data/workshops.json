@@ -1,5 +1,63 @@
 [
   {
+    "id": "ai-summit",
+    "date": "August 6, 2026 • 9:00 AM – 5:00 PM",
+    "title": "AI Summit",
+    "subtitle": "Where ideas meet intelligence. The future starts here.",
+    "eyebrow": "Connect. Learn. Innovate. Elevate.",
+    "type": "Summit",
+    "series": "Tech Series",
+    "location": "LOCATION TBD",
+    "experience": "The Experience",
+    "presaleLabel": "Exclusive Presale",
+    "pricingTiers": [
+      {
+        "name": "Exclusive Presale",
+        "price": "$135",
+        "description": "Networking & Friends",
+        "window": "Available Now"
+      },
+      {
+        "name": "Tier 2",
+        "price": "$150",
+        "window": "July 2 – July 20"
+      },
+      {
+        "name": "Tier 3",
+        "price": "$175",
+        "window": "July 21 – August 5"
+      }
+    ],
+    "features": [
+      {
+        "title": "Network",
+        "subtitle": "With Leaders\nand Innovators",
+        "icon": "network"
+      },
+      {
+        "title": "Discover",
+        "subtitle": "The Future\nof AI",
+        "icon": "discover"
+      },
+      {
+        "title": "Grow",
+        "subtitle": "Your Ideas\nand Impact",
+        "icon": "grow"
+      },
+      {
+        "title": "Build",
+        "subtitle": "Real Connections\nThat Matter",
+        "icon": "build"
+      }
+    ],
+    "ctaPrimary": "Be Part of the Future.",
+    "ctaPrimaryAccent": "Don't Miss It!",
+    "ctaSecondary": "Spread the Word. Share the Future.",
+    "tagline": "Embrace the Future",
+    "searchQuery": "AI artificial intelligence tech summit future innovation",
+    "theme": "cyberpunk"
+  },
+  {
     "id": "communication-in-business-summit",
     "date": "June 6, 2026 • 9:00 AM – 5:00 PM",
     "title": "Communication in Business Summit",
