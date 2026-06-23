@@ -55,48 +55,9 @@
     "ctaSecondary": "Spread the Word. Share the Future.",
     "tagline": "Embrace the Future",
     "searchQuery": "AI artificial intelligence tech summit future innovation",
-    "theme": "cyberpunk"
-  },
-  {
-    "id": "communication-in-business-summit",
-    "date": "June 6, 2026 • 9:00 AM – 5:00 PM",
-    "title": "Communication in Business Summit",
-    "subtitle": "Connect. Influence. Grow.",
-    "type": "Summit",
-    "series": "Business Summit",
-    "price": "$199",
-    "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=83d3c1c9-5302-11f1-a8e1-12a0879a85b1",
-    "invoiceNumber": "SUMMIT",
-    "speakers": [
-      {
-        "name": "David B. Alexander",
-        "role": "Psychotherapist",
-        "topic": "Speak and Act So People Want to Work With You"
-      },
-      {
-        "name": "Joseph Beauchamp",
-        "role": "Speaker & Storytelling Coach",
-        "topic": "Win the Room: Storytelling, Personality Insights & Powerful Presentations"
-      },
-      {
-        "name": "Natasha Zaytseva",
-        "role": "Business Coach & Strategic Advisor",
-        "topic": "How Communication Drives Revenues"
-      },
-      {
-        "name": "Olga Binyaminov",
-        "role": "Biochemist | Educator | Entrepreneur",
-        "topic": "You Are the Message: The Energy & Mindset That Change Everything"
-      }
-    ],
-    "tagline": "Scaling Ideas, Elevating Success",
-    "speakerImages": [
-      "/summit-images/david-alexander.webp",
-      "/summit-images/joseph.jpeg",
-      "/summit-images/Natasha.jpeg",
-      "/summit-images/olga-photo.jpeg"
-    ],
-    "searchQuery": "business communication summit conference professional speakers"
+    "theme": "cyberpunk",
+    "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=fe9c7a5d-6e83-11f1-8d9b-128462456e49",
+    "invoiceNumber": "AI-SUMMIT"
   },
   {
     "id": "love-blueprint",
