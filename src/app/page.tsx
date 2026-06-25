@@ -187,15 +187,15 @@ function App() {
               className="workshop-section relative flex items-center justify-center overflow-hidden py-16 md:py-20 bg-[#050410]"
             >
               {/* Cityscape Background (Right Side Only - Desktop Only) */}
-              <div className="absolute top-0 right-0 lg:w-[50%] h-[600px] md:h-[700px] pointer-events-none hidden lg:block">
+              <div className="absolute top-[80px] right-0 lg:w-[50%] h-[380px] md:h-[420px] pointer-events-none hidden lg:block">
                 <div 
-                  className="absolute inset-0 bg-cover bg-bottom bg-no-repeat opacity-60" 
-                  style={{ backgroundImage: 'url(/summit-images/ai-summit-bg.jpg)' }} 
+                  className="absolute inset-0 bg-cover bg-bottom bg-no-repeat opacity-50" 
+                  style={{ backgroundImage: 'url(/summit-images/ai-summit-bg.png)' }} 
                 />
                 {/* Horizontal gradient to blend the left side on desktop */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#050410] via-[#050410]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#050410] via-[#050410]/30 to-transparent" />
                 {/* Vertical gradient to fade out at the bottom */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#050410]/30 via-transparent to-[#050410]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#050410]/40 via-transparent to-[#050410]" />
               </div>
 
               {/* Background grid + glows */}
@@ -219,217 +219,64 @@ function App() {
                 {/* ===== HERO ===== */}
                 <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center mb-12 md:mb-16">
                   {/* Left: copy + info */}
-                  <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-                    {/* Eyebrow */}
-                    <div className="flex items-center justify-center lg:justify-start gap-3 mb-5 w-full">
-                      <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#00e5ff]" />
-                      <span className="text-[#7df9ff] text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase whitespace-nowrap">
-                        {workshop.eyebrow || 'Connect. Learn. Innovate. Elevate.'}
-                      </span>
-                      <span className="h-px w-8 lg:flex-1 bg-gradient-to-l lg:bg-gradient-to-r from-transparent lg:from-[#00e5ff]/60 to-[#00e5ff] lg:to-transparent" />
-                    </div>
-
+                  <div className="flex flex-col items-center lg:items-start text-center lg:text-left z-10">
                     {/* Title */}
-                    <h2 className="font-display font-extrabold leading-none uppercase tracking-tight mb-5">
-                      <span className="block text-5xl md:text-7xl lg:text-8xl">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#7df9ff] to-[#00b8ff] drop-shadow-[0_0_25px_rgba(0,229,255,0.5)]">AI</span>
+                    <h2 className="font-display font-black leading-none uppercase tracking-tight mb-3">
+                      <span className="block text-5xl sm:text-7xl lg:text-8xl text-left">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-[#00b8ff] drop-shadow-[0_0_20px_rgba(0,229,255,0.4)]">AI</span>
                         <span className="text-white"> SUMMIT</span>
                       </span>
                     </h2>
 
-                    {/* Subtitle */}
-                    <p className="text-gray-300/90 text-base md:text-lg leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
-                      {workshop.subtitle}
+                    {/* Slogan */}
+                    <p className="text-gray-300 text-xs md:text-sm font-bold tracking-[0.25em] uppercase mb-4 text-left w-full">
+                      {workshop.eyebrow || 'CONNECT. LEARN. INNOVATE. ELEVATE.'}
                     </p>
 
+                    {/* Gradient Line Separator */}
+                    <div className="w-full max-w-md h-[1.5px] bg-gradient-to-r from-[#00e5ff] via-[#7b2cbf] to-transparent mb-6 mt-1" />
+
                     {/* Info rows */}
-                    <div className="space-y-4 w-full flex flex-col items-center lg:items-start">
+                    <div className="space-y-5 w-full flex flex-col items-start text-left mb-8">
+                      {/* Date & Time Row */}
                       <div className="flex items-center gap-4 text-left">
-                        <span className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center bg-[#0e1f3e]/80 border border-[#00e5ff]/50 shadow-[0_0_18px_rgba(0,229,255,0.25)]">
+                        <span className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-[#060515]/90 border-2 border-[#00e5ff] shadow-[0_0_12px_rgba(0,229,255,0.3)]">
                           <Calendar className="w-5 h-5 text-[#00e5ff]" />
                         </span>
                         <div>
-                          <div className="text-white font-bold tracking-wide uppercase text-sm md:text-base">{datePart}</div>
-                          {timePart && <div className="text-[#00e5ff] text-xs md:text-sm font-semibold">{timePart}</div>}
+                          <div className="text-white font-extrabold tracking-wide uppercase text-sm md:text-base">
+                            AUGUST 6, 2026
+                          </div>
+                          <div className="text-[#00e5ff] text-xs md:text-sm font-bold mt-0.5">
+                            9:00 AM – 5:00 PM
+                          </div>
                         </div>
                       </div>
 
+                      {/* Location Row */}
                       <div className="flex items-center gap-4 text-left">
-                        <span className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center bg-[#0e1f3e]/80 border border-[#7b2cbf]/60 shadow-[0_0_18px_rgba(123,44,191,0.25)]">
+                        <span className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-[#060515]/90 border-2 border-[#7b2cbf] shadow-[0_0_12px_rgba(123,44,191,0.3)]">
                           <MapPin className="w-5 h-5 text-[#b794f4]" />
                         </span>
-                        <div className="text-white font-bold tracking-wide uppercase text-sm md:text-base">
-                          LOCATION <span className="text-[#f72585]">{(workshop.location || 'LOCATION TBD').replace(/^location\s*/i, '') || 'TBD'}</span>
+                        <div>
+                          <div className="text-white font-extrabold tracking-wide uppercase text-sm md:text-base">
+                            LOCATION
+                          </div>
+                          <div className="text-[#b794f4] text-xs md:text-sm font-bold mt-0.5">
+                            TBD
+                          </div>
                         </div>
-                      </div>
-
-                      <div className="flex items-center gap-4 text-left">
-                        <span className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center bg-[#0e1f3e]/80 border border-[#f72585]/50 shadow-[0_0_18px_rgba(247,37,133,0.25)]">
-                          <Building2 className="w-5 h-5 text-[#f72585]" />
-                        </span>
-                        <div className="text-white font-bold tracking-wide uppercase text-sm md:text-base">{workshop.experience || 'The Experience'}</div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Right: holographic AI visual SVG */}
-                  <div className="relative w-full h-[320px] md:h-[420px] flex items-center justify-center z-10">
-                    <svg 
-                      viewBox="0 0 320 380" 
-                      className="w-full h-full max-h-[380px] md:max-h-[420px] drop-shadow-[0_0_20px_rgba(0,229,255,0.25)]"
-                      fill="none" 
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <defs>
-                        <filter id="glow-cyan" x="-30%" y="-30%" width="160%" height="160%">
-                          <feGaussianBlur stdDeviation="5" result="blur" />
-                          <feMerge>
-                            <feMergeNode in="blur" />
-                            <feMergeNode in="SourceGraphic" />
-                          </feMerge>
-                        </filter>
-                        <filter id="glow-purple" x="-30%" y="-30%" width="160%" height="160%">
-                          <feGaussianBlur stdDeviation="7" result="blur" />
-                          <feMerge>
-                            <feMergeNode in="blur" />
-                            <feMergeNode in="SourceGraphic" />
-                          </feMerge>
-                        </filter>
-                        <filter id="glow-heavy-cyan" x="-40%" y="-40%" width="180%" height="180%">
-                          <feGaussianBlur stdDeviation="10" result="blur" />
-                          <feMerge>
-                            <feMergeNode in="blur" />
-                            <feMergeNode in="SourceGraphic" />
-                          </feMerge>
-                        </filter>
-                        <linearGradient id="beam-grad" x1="0" y1="1" x2="0" y2="0">
-                          <stop offset="0%" stopColor="#00e5ff" stopOpacity="0.45" />
-                          <stop offset="35%" stopColor="#7b2cbf" stopOpacity="0.2" />
-                          <stop offset="85%" stopColor="#050410" stopOpacity="0" />
-                        </linearGradient>
-                        <linearGradient id="ai-grad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#ffffff" />
-                          <stop offset="40%" stopColor="#e3faff" />
-                          <stop offset="100%" stopColor="#00e5ff" />
-                        </linearGradient>
-                        <style>
-                          {`
-                            @keyframes float-particle {
-                              0% { transform: translateY(15px); opacity: 0; }
-                              30% { opacity: 0.8; }
-                              70% { opacity: 0.8; }
-                              100% { transform: translateY(-45px); opacity: 0; }
-                            }
-                            @keyframes hologram-pulse {
-                              0%, 100% { opacity: 0.35; }
-                              50% { opacity: 0.65; }
-                            }
-                            @keyframes text-glow {
-                              0%, 100% { filter: drop-shadow(0 0 8px rgba(0,229,255,0.7)); }
-                              50% { filter: drop-shadow(0 0 20px rgba(0,229,255,0.95)) drop-shadow(0 0 35px rgba(123,44,191,0.5)); }
-                            }
-                            @keyframes ring-rotate-clockwise {
-                              0% { transform: rotate(0deg); transform-origin: 160px 320px; }
-                              100% { transform: rotate(360deg); transform-origin: 160px 320px; }
-                            }
-                            @keyframes ring-rotate-counter {
-                              0% { transform: rotate(360deg); transform-origin: 160px 320px; }
-                              100% { transform: rotate(0deg); transform-origin: 160px 320px; }
-                            }
-                            .particle-1 { animation: float-particle 4.5s infinite linear; }
-                            .particle-2 { animation: float-particle 6s infinite linear 1.5s; }
-                            .particle-3 { animation: float-particle 5.2s infinite linear 3s; }
-                            .beam-light { animation: hologram-pulse 4s infinite ease-in-out; }
-                            .ai-text-glow { animation: text-glow 4s infinite ease-in-out; }
-                            .ring-c { animation: ring-rotate-clockwise 25s infinite linear; }
-                            .ring-cc { animation: ring-rotate-counter 20s infinite linear; }
-                          `}
-                        </style>
-                      </defs>
-
-                      {/* --- LIGHT BEAM --- */}
-                      <polygon 
-                        points="70,80 250,80 210,320 110,320" 
-                        fill="url(#beam-grad)" 
-                        className="beam-light"
-                      />
-
-                      {/* --- HOLOGRAPHIC BG GRID/DETAILS --- */}
-                      <g stroke="#00e5ff" strokeWidth="0.8" opacity="0.3" filter="url(#glow-cyan)">
-                        <line x1="160" y1="120" x2="160" y2="320" strokeDasharray="3 3" />
-                        <line x1="115" y1="180" x2="205" y2="180" strokeDasharray="2 4" />
-                        <line x1="90" y1="240" x2="230" y2="240" strokeDasharray="2 4" />
-                      </g>
-
-                      {/* --- FLOATING PARTICLES --- */}
-                      <g filter="url(#glow-cyan)">
-                        {/* Column 1 */}
-                        <circle cx="120" cy="180" r="2" fill="#00e5ff" className="particle-1" />
-                        <circle cx="210" cy="140" r="1.5" fill="#00e5ff" className="particle-2" />
-                        <circle cx="150" cy="220" r="2.5" fill="#7b2cbf" className="particle-3" />
-                        
-                        {/* Column 2 */}
-                        <circle cx="180" cy="170" r="1.5" fill="#f72585" className="particle-1" style={{ animationDelay: '0.8s' }} />
-                        <circle cx="105" cy="130" r="2" fill="#00e5ff" className="particle-3" style={{ animationDelay: '1.2s' }} />
-                        <circle cx="200" cy="200" r="1.2" fill="#00e5ff" className="particle-2" style={{ animationDelay: '2.5s' }} />
-                        
-                        {/* Column 3 */}
-                        <circle cx="140" cy="110" r="2.2" fill="#00e5ff" className="particle-2" style={{ animationDelay: '0.4s' }} />
-                        <circle cx="165" cy="150" r="1.5" fill="#7b2cbf" className="particle-1" style={{ animationDelay: '2.2s' }} />
-                        <circle cx="225" cy="115" r="2" fill="#00e5ff" className="particle-3" style={{ animationDelay: '0.6s' }} />
-                      </g>
-
-                      {/* --- CIRCUIT CONNECTORS (BACKGROUND TO TEXT) --- */}
-                      <g stroke="#00e5ff" strokeWidth="1" fill="none" opacity="0.5" filter="url(#glow-cyan)">
-                        <path d="M125,270 L125,230 L105,210" />
-                        <circle cx="105" cy="210" r="2" fill="#00e5ff" />
-                        
-                        <path d="M195,270 L195,240 L215,220" />
-                        <circle cx="215" cy="220" r="2" fill="#00e5ff" />
-                        
-                        <path d="M90,170 L110,150 L210,150 L230,170" />
-                        <circle cx="90" cy="170" r="1.5" fill="#00e5ff" />
-                        <circle cx="230" cy="170" r="1.5" fill="#00e5ff" />
-                      </g>
-
-                      {/* --- CENTRAL HOLOGRAPHIC "AI" TEXT --- */}
-                      <text 
-                        x="160" 
-                        y="200" 
-                        textAnchor="middle" 
-                        fontFamily="Montserrat, Inter, system-ui, sans-serif" 
-                        fontWeight="900" 
-                        fontSize="94" 
-                        fill="url(#ai-grad)" 
-                        stroke="#00e5ff" 
-                        strokeWidth="1.5"
-                        letterSpacing="-0.04em"
-                        className="ai-text-glow"
-                      >
-                        AI
-                      </text>
-
-                      {/* Circuit details drawn over the text for tech aesthetic */}
-                      <g stroke="#ffffff" strokeWidth="1" fill="none" opacity="0.8" filter="url(#glow-cyan)">
-                        <path d="M132,150 L140,165 M188,150 L180,165" />
-                        <circle cx="140" cy="165" r="1" fill="#ffffff" />
-                        <circle cx="180" cy="165" r="1" fill="#ffffff" />
-                      </g>
-
-                      {/* --- BASE PEDESTAL (ELLIPSES) --- */}
-                      <g className="ring-c">
-                        {/* Outer Glow Ring */}
-                        <ellipse cx="160" cy="320" rx="95" ry="19" stroke="#7b2cbf" strokeWidth="2.5" opacity="0.8" filter="url(#glow-purple)" strokeDasharray="30 10 15 5" />
-                      </g>
-                      <g className="ring-cc">
-                        {/* Inner Bright Ring */}
-                        <ellipse cx="160" cy="320" rx="78" ry="16" stroke="#00e5ff" strokeWidth="3" filter="url(#glow-cyan)" strokeDasharray="50 15 10 15" />
-                      </g>
-                      
-                      {/* Innermost pulsing light center */}
-                      <ellipse cx="160" cy="320" rx="55" ry="11" stroke="#f72585" strokeWidth="1.5" opacity="0.6" strokeDasharray="5 5" />
-                      <ellipse cx="160" cy="320" rx="35" ry="7" fill="#00e5ff" fillOpacity="0.25" filter="url(#glow-heavy-cyan)" />
-                    </svg>
+                  {/* Right: AI Profile Image */}
+                  <div className="relative w-full h-[300px] md:h-[380px] flex items-center justify-center z-10 lg:translate-y-[45px]">
+                    <img
+                      src="/summit-images/ai-image.png"
+                      alt="AI Summit Visual"
+                      className="w-full h-full object-contain max-h-[220px] md:max-h-[280px] lg:max-h-[320px] drop-shadow-[0_0_35px_rgba(0,229,255,0.35)]"
+                    />
                   </div>
                 </div>
 
@@ -441,35 +288,175 @@ function App() {
                 </div>
 
                 {/* Pricing tiers */}
-                <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 sm:gap-2 md:gap-4 mb-14">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-4 md:gap-6 mb-14">
                   {(workshop.pricingTiers || []).map((tier: any, i: number) => {
-                    const a = tierAccents[i] || tierAccents[0];
-                    const TierIcon = i === 0 ? Users : Calendar;
+                    // Unique gradients for each ticket tier
+                    const ticketGradients = [
+                      {
+                        header: (
+                          <linearGradient id={`t-hdr-${i}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#1e3a8a" />
+                            <stop offset="50%" stopColor="#2563eb" />
+                            <stop offset="100%" stopColor="#7c3aed" />
+                          </linearGradient>
+                        ),
+                        border: (
+                          <linearGradient id={`t-brd-${i}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#00e5ff" />
+                            <stop offset="50%" stopColor="#7b2cbf" />
+                            <stop offset="100%" stopColor="#f72585" />
+                          </linearGradient>
+                        ),
+                        windowColor: 'text-[#f72585]',
+                        dateColor: 'text-[#b794f4]',
+                        registerColor: 'text-[#00e5ff]',
+                        glow: 'drop-shadow-[0_0_15px_rgba(0,229,255,0.15)] group-hover:drop-shadow-[0_0_25px_rgba(0,229,255,0.35)]'
+                      },
+                      {
+                        header: (
+                          <linearGradient id={`t-hdr-${i}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#4338ca" />
+                            <stop offset="100%" stopColor="#db2777" />
+                          </linearGradient>
+                        ),
+                        border: (
+                          <linearGradient id={`t-brd-${i}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#7b2cbf" />
+                            <stop offset="50%" stopColor="#f72585" />
+                            <stop offset="100%" stopColor="#ec4899" />
+                          </linearGradient>
+                        ),
+                        windowColor: 'text-[#ec4899]',
+                        dateColor: 'text-[#f472b6]',
+                        registerColor: 'text-[#7b2cbf]',
+                        glow: 'drop-shadow-[0_0_15px_rgba(123,44,191,0.15)] group-hover:drop-shadow-[0_0_25px_rgba(123,44,191,0.35)]'
+                      },
+                      {
+                        header: (
+                          <linearGradient id={`t-hdr-${i}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#581c87" />
+                            <stop offset="100%" stopColor="#b91c1c" />
+                          </linearGradient>
+                        ),
+                        border: (
+                          <linearGradient id={`t-brd-${i}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#7b2cbf" />
+                            <stop offset="50%" stopColor="#d946ef" />
+                            <stop offset="100%" stopColor="#f97316" />
+                          </linearGradient>
+                        ),
+                        windowColor: 'text-[#d946ef]',
+                        dateColor: 'text-[#fdba74]',
+                        registerColor: 'text-[#f72585]',
+                        glow: 'drop-shadow-[0_0_15px_rgba(247,37,133,0.15)] group-hover:drop-shadow-[0_0_25px_rgba(247,37,133,0.35)]'
+                      }
+                    ];
+
+                    const accent = ticketGradients[i] || ticketGradients[0];
+
+                    // Parse date window string
+                    const windowStr = tier.window || '';
+                    const isEnds = windowStr.toUpperCase().includes('ENDS');
 
                     return (
-                      <div key={i} className="flex items-stretch sm:items-center gap-4 sm:gap-2 md:gap-4 mt-5">
+                      <div key={i} className="flex items-center gap-6 sm:gap-4 md:gap-6 mt-5">
                         <button
                           onClick={() => openPayment({ ...workshop, price: tier.price })}
-                          className={`group relative text-center bg-white/[0.04] backdrop-blur-sm border ${a.ring} ${a.glow} rounded-2xl px-6 pt-9 pb-6 w-full sm:w-44 md:w-52 flex flex-col items-center transition-all duration-300 hover:bg-white/[0.08] hover:scale-[1.03]`}
+                          className="group relative w-[220px] h-[260px] flex flex-col items-center justify-between text-center transition-all duration-300 hover:scale-[1.04] focus:outline-none shrink-0"
                         >
-                          {/* Circular badge overlapping top border */}
-                          <div className={`absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#0a0820] border-2 ${a.ring} flex items-center justify-center shadow-lg z-10`}>
-                            <TierIcon className={`w-5 h-5 ${a.text}`} />
+                          {/* SVG Ticket Template */}
+                          <svg
+                            className={`absolute inset-0 w-full h-full transition-all duration-300 ${accent.glow}`}
+                            viewBox="0 0 220 260"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <defs>
+                              {accent.header}
+                              {accent.border}
+                            </defs>
+                            
+                            {/* Ticket Body Background */}
+                            <path
+                              d="M 16,0 L 204,0 A 16,16 0 0,1 220,16 L 220,150 A 10,10 0 0,0 220,170 L 220,244 A 16,16 0 0,1 204,260 L 16,260 A 16,16 0 0,1 0,244 L 0,170 A 10,10 0 0,0 0,150 L 0,16 A 16,16 0 0,1 16,0 Z"
+                              fill="#060515"
+                            />
+                            
+                            {/* Ticket Header Background */}
+                            <path
+                              d="M 16,0 L 204,0 A 16,16 0 0,1 220,16 L 220,52 L 0,52 L 0,16 A 16,16 0 0,1 16,0 Z"
+                              fill={`url(#t-hdr-${i})`}
+                            />
+                            
+                            {/* Middle Dashed Divider */}
+                            <line
+                              x1="10"
+                              y1="160"
+                              x2="210"
+                              y2="160"
+                              stroke="#7b2cbf"
+                              strokeWidth="1.2"
+                              strokeDasharray="4 4"
+                              opacity="0.6"
+                            />
+                            
+                            {/* Glowing Ticket Border */}
+                            <path
+                              d="M 16,0 L 204,0 A 16,16 0 0,1 220,16 L 220,150 A 10,10 0 0,0 220,170 L 220,244 A 16,16 0 0,1 204,260 L 16,260 A 16,16 0 0,1 0,244 L 0,170 A 10,10 0 0,0 0,150 L 0,16 A 16,16 0 0,1 16,0 Z"
+                              stroke={`url(#t-brd-${i})`}
+                              strokeWidth="1.5"
+                            />
+                          </svg>
+                          
+                          {/* Content overlay */}
+                          <div className="relative z-10 w-full h-full flex flex-col justify-between py-4 px-5 pointer-events-none">
+                            {/* Header Text */}
+                            <div className="h-9 flex items-center justify-center">
+                              <span className="text-white font-display font-black text-sm uppercase tracking-[0.25em]">
+                                {tier.name === "Exclusive Presale" ? "PRESALE" : tier.name}
+                              </span>
+                            </div>
+                            
+                            {/* Pricing / Middle area */}
+                            <div className="flex-1 flex flex-col items-center justify-center mt-2">
+                              <span className="text-white font-display font-extrabold text-5xl tracking-tight leading-none">
+                                {tier.price}
+                              </span>
+                              {tier.description && (
+                                <span className="text-gray-400 text-[10px] uppercase tracking-wider mt-2">
+                                  {tier.description}
+                                </span>
+                              )}
+                            </div>
+                            
+                            {/* Bottom area */}
+                            <div className="h-[90px] flex flex-col items-center justify-center">
+                              <span className={`font-display font-extrabold text-xs uppercase tracking-[0.18em] leading-snug ${accent.windowColor}`}>
+                                {isEnds ? (
+                                  <>
+                                    PRE SALE ENDS
+                                    <span className={`block mt-1 text-sm font-black ${accent.dateColor}`}>
+                                      {windowStr.replace(/pre-sale ends/i, '').replace(/ends/i, '').trim().toUpperCase()}
+                                    </span>
+                                  </>
+                                ) : (
+                                  <>
+                                    ACTIVE DATES
+                                    <span className={`block mt-1 text-sm font-black ${accent.dateColor}`}>
+                                      {windowStr.toUpperCase()}
+                                    </span>
+                                  </>
+                                )}
+                              </span>
+                              
+                              <span className="text-white font-display font-black text-[9.5px] uppercase tracking-[0.2em] mt-3 group-hover:translate-x-1 transition-transform duration-300">
+                                REGISTER NOW →
+                              </span>
+                            </div>
                           </div>
-
-                          <span className={`text-[10px] md:text-xs font-bold tracking-widest uppercase mb-2 mt-2 ${a.text}`}>
-                            {tier.window || tier.name}
-                          </span>
-                          <span className="text-white font-display font-extrabold text-4xl md:text-5xl leading-none mb-1">{tier.price}</span>
-                          {tier.description && (
-                            <span className="text-gray-400 text-[10px] md:text-xs uppercase tracking-wide mt-1">{tier.description}</span>
-                          )}
-                          <span className={`mt-3 text-[10px] font-bold uppercase tracking-widest ${a.text} opacity-70 group-hover:opacity-100 transition-opacity`}>
-                            Register →
-                          </span>
                         </button>
                         {i < (workshop.pricingTiers.length - 1) && (
-                          <ChevronRight className="hidden sm:block w-6 h-6 text-white/30 flex-shrink-0 self-center" />
+                          <ChevronRight className="hidden lg:block w-6 h-6 text-white/30 flex-shrink-0 self-center" />
                         )}
                       </div>
                     );
@@ -477,7 +464,7 @@ function App() {
                 </div>
 
                 {/* ===== Feature highlights ===== */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8 py-8 border-t border-white/10 mb-12">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-y-8 py-8 border-t border-white/10 mb-12 w-full">
                   {(workshop.features || []).map((f: any, i: number) => {
                     const Icon = FEATURE_ICONS[f.icon] || Users;
                     const isEven = i % 2 === 0;
@@ -489,7 +476,7 @@ function App() {
                     return (
                       <div 
                         key={i} 
-                        className={`flex items-center gap-4 px-6 justify-start md:justify-center ${
+                        className={`flex items-center gap-4 px-8 justify-start md:justify-center w-full md:w-auto ${
                           i !== 0 ? 'md:border-l md:border-white/10' : ''
                         }`}
                       >
@@ -506,6 +493,80 @@ function App() {
                     );
                   })}
                 </div>
+
+                {/* ===== Speakers Grid ===== */}
+                {workshop.speakers && workshop.speakers.length > 0 && (
+                  <div className="mb-14">
+                    <div className="text-center mb-8">
+                      <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] via-[#7b2cbf] to-[#f72585] text-2xl md:text-3xl font-extrabold tracking-[0.2em] uppercase mb-2">
+                        4 Expert Speakers
+                      </h3>
+                      <p className="text-gray-400 text-xs md:text-sm font-semibold tracking-wider uppercase">
+                        Real Insights. Real Impact.
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                      {workshop.speakers.map((speaker: any, i: number) => {
+                        const borderColors = [
+                          'border-[#00e5ff]/50 hover:border-[#00e5ff] shadow-[0_0_15px_rgba(0,229,255,0.1)] hover:shadow-[0_0_25px_rgba(0,229,255,0.25)]',
+                          'border-[#7b2cbf]/50 hover:border-[#7b2cbf] shadow-[0_0_15px_rgba(123,44,191,0.1)] hover:shadow-[0_0_25px_rgba(123,44,191,0.25)]',
+                          'border-[#f72585]/50 hover:border-[#f72585] shadow-[0_0_15px_rgba(247,37,133,0.1)] hover:shadow-[0_0_25px_rgba(247,37,133,0.25)]',
+                          'border-[#00e5ff]/50 hover:border-[#00e5ff] shadow-[0_0_15px_rgba(0,229,255,0.1)] hover:shadow-[0_0_25px_rgba(0,229,255,0.25)]',
+                        ];
+                        const textColors = ['text-[#00e5ff]', 'text-[#b794f4]', 'text-[#f72585]', 'text-[#00e5ff]'];
+                        const bgGradients = [
+                          'from-[#00e5ff]/5 to-[#7b2cbf]/5',
+                          'from-[#7b2cbf]/5 to-[#f72585]/5',
+                          'from-[#f72585]/5 to-[#00e5ff]/5',
+                          'from-[#00e5ff]/5 to-[#7b2cbf]/5',
+                        ];
+                        const borderColor = borderColors[i % borderColors.length];
+                        const textColor = textColors[i % textColors.length];
+                        const bgGradient = bgGradients[i % bgGradients.length];
+
+                        return (
+                          <div
+                            key={i}
+                            className={`relative bg-gradient-to-br ${bgGradient} bg-[#0a0820]/90 backdrop-blur-md border ${borderColor} rounded-2xl p-6 text-center transition-all duration-300 hover:scale-[1.03] group`}
+                          >
+                            {/* Number badge */}
+                            <div className={`absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#0a0820] border ${borderColor.split(' ')[0]} flex items-center justify-center text-xs font-bold text-white shadow-lg`}>
+                              {i + 1}
+                            </div>
+
+                            {/* Avatar/Initial */}
+                            <div className={`w-20 h-20 mx-auto rounded-full border-2 ${borderColor.split(' ')[0]} mb-4 overflow-hidden flex items-center justify-center bg-[#0a0820]`}>
+                              {workshop.speakerImages?.[i] ? (
+                                <img
+                                  src={workshop.speakerImages[i]}
+                                  alt={speaker.name}
+                                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                                />
+                              ) : (
+                                <span className={`text-3xl font-extrabold tracking-tighter ${textColor}`}>
+                                  {speaker.name
+                                    .split(' ')
+                                    .map((n: string) => n[0])
+                                    .join('')}
+                                </span>
+                              )}
+                            </div>
+
+                            <h4 className="text-white font-black font-display text-lg tracking-wide uppercase mb-1">{speaker.name}</h4>
+                            <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${textColor}`}>{speaker.role}</p>
+
+                            <div className="h-px bg-white/10 w-12 mx-auto mb-3" />
+
+                            <p className="text-gray-300 text-xs md:text-sm italic leading-relaxed px-2">
+                              "{speaker.topic}"
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
 
                 {/* ===== Bottom CTA bar ===== */}
                 <div className="p-[1.5px] bg-gradient-to-r from-[#00e5ff] to-[#7b2cbf] rounded-2xl shadow-[0_0_35px_rgba(0,229,255,0.15)] mb-12">

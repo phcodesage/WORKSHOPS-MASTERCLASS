@@ -15,7 +15,7 @@
         "name": "Exclusive Presale",
         "price": "$135",
         "description": "Networking & Friends",
-        "window": "Available Now"
+        "window": "Pre-Sale Ends July 2"
       },
       {
         "name": "Tier 2",
@@ -31,25 +31,43 @@
     "features": [
       {
         "title": "Network",
-        "subtitle": "With Leaders\nand Innovators",
+        "subtitle": "Connect with leaders\nand innovators",
         "icon": "network"
       },
       {
-        "title": "Discover",
-        "subtitle": "The Future\nof AI",
+        "title": "Learn",
+        "subtitle": "Actionable insights\nfrom AI experts",
         "icon": "discover"
       },
       {
         "title": "Grow",
-        "subtitle": "Your Ideas\nand Impact",
+        "subtitle": "Tools and strategies\nto scale your business",
         "icon": "grow"
-      },
-      {
-        "title": "Build",
-        "subtitle": "Real Connections\nThat Matter",
-        "icon": "build"
       }
     ],
+    "speakers": [
+      {
+        "name": "Rob Marchese",
+        "role": "Founder",
+        "topic": "Create your own family and business connecting app"
+      },
+      {
+        "name": "Leonard Kaplan",
+        "role": "CEO",
+        "topic": "Is your business AI ready? AI-ready starts with trustworthy technology"
+      },
+      {
+        "name": "Maura Charles",
+        "role": "AI Strategist",
+        "topic": "And last secure AI tools"
+      },
+      {
+        "name": "Tildet Varon",
+        "role": "Educator",
+        "topic": "Build Claude into your business as a trained AI assistant"
+      }
+    ],
+    "speakerImages": ["", "", "", ""],
     "ctaPrimary": "Be Part of the Future.",
     "ctaPrimaryAccent": "Don't Miss It!",
     "ctaSecondary": "Spread the Word. Share the Future.",
@@ -58,60 +76,5 @@
     "theme": "cyberpunk",
     "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=fe9c7a5d-6e83-11f1-8d9b-128462456e49",
     "invoiceNumber": "AI-SUMMIT"
-  },
-  {
-    "id": "love-blueprint",
-    "date": "June 7, 2026 • 6:00 PM",
-    "title": "The Love Blueprint",
-    "subtitle": "How to Build Healthy, Thriving Relationships",
-    "type": "Workshop",
-    "series": "Relationship Series",
-    "price": "$47",
-    "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1",
-    "searchQuery": "healthy relationships love couple connection"
-  },
-  {
-    "id": "communication-that-connects",
-    "date": "June 14, 2026 • 6:00 PM",
-    "title": "Communication That Connects",
-    "subtitle": "The Art of Speaking & Listening with Love",
-    "type": "Workshop",
-    "series": "Relationship Series",
-    "price": "$47",
-    "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1",
-    "searchQuery": "conversation talking couple understanding listening"
-  },
-  {
-    "id": "healing-relationship-wounds",
-    "date": "June 21, 2026 • 6:00 PM",
-    "title": "Healing Relationship Wounds",
-    "subtitle": "From Hurt to Connection",
-    "type": "Workshop",
-    "series": "Relationship Series",
-    "price": "$47",
-    "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1",
-    "searchQuery": "healing heart comfort support holding hands"
-  },
-  {
-    "id": "boundaries-self-respect",
-    "date": "June 28, 2026 • 6:00 PM",
-    "title": "Boundaries & Self-Respect",
-    "subtitle": "The Secret to Loving Without Losing Yourself",
-    "type": "Workshop",
-    "series": "Relationship Series",
-    "price": "$47",
-    "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1",
-    "searchQuery": "boundaries self care reflection confidence"
-  },
-  {
-    "id": "love-languages-masterclass",
-    "date": "June 30, 2026 • 6:00 PM",
-    "title": "The Love Languages Masterclass",
-    "subtitle": "Discover How to Speak and Understand Love",
-    "type": "Masterclass",
-    "series": "Relationship Series",
-    "price": "$47",
-    "registrationUrl": "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=cd5960dd-5302-11f1-a8e1-12a0879a85b1",
-    "searchQuery": "love hearts expression communication"
   }
 ]
